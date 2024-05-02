@@ -1,15 +1,20 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Reporte } from '../../reporte/reporte.entity/reporte.entity.js';
-
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Usuario {
-    @PrimaryGeneratedColumn()
-    id: number;
+export class UsuarioEntity {
 
-    @Column({ type: 'varchar', length: 255 })
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
+
+    @Column()
     nombre: string;
 
-    @OneToMany(() => Reporte, reporte => reporte.usuario)
-    reportes: Reporte[];
+    @Column()
+    correo: string;
+
+    @Column()
+    contrasena: string;
+
+    @Column()
+    rol: number;
 }
