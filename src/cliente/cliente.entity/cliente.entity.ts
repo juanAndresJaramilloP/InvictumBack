@@ -1,15 +1,14 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { ReporteEntity } from '../../reporte/reporte.entity/reporte.entity';
+import { Column, Entity, OneToMany } from 'typeorm';
+import { UsuarioEntity } from '../../usuario/usuario.entity/usuario.entity';
+import { TransferenciaEntity } from '../../transferencia/transferencia.entity/transferencia.entity';
 
 @Entity()
-export class ClienteEntity {
-
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+export class ClienteEntity extends UsuarioEntity{
 
     @Column()
     balance: number;
 
-    @OneToMany(() => ReporteEntity, reporte => reporte.cliente)
-    reportes: ReporteEntity[];
+    @OneToMany(() => TransferenciaEntity, transferencia => transferencia.cliente)
+    transferencias: TransferenciaEntity[];
+
 }

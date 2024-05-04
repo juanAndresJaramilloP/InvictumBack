@@ -1,7 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { ReporteEntity } from '../../reporte/reporte.entity/reporte.entity';
 
-@Entity()
-export class UsuarioEntity {
+export abstract class UsuarioEntity {
 
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -17,4 +17,7 @@ export class UsuarioEntity {
 
     @Column()
     rol: number;
+
+    @OneToMany(() => ReporteEntity, reporte => reporte.usuario)
+    reportes: ReporteEntity[];
 }

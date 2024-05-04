@@ -1,13 +1,30 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GestorModule } from './gestor/gestor.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { ReporteModule } from './reporte/reporte.module';
+import {TransferenciaModule} from './transferencia/transferencia.module';
+import { TemaEducativoModule } from './tema-educativo/tema-educativo.module';
+import { RecursoEducativoModule } from './recurso-educativo/recurso-educativo.module';
 
 @Module({
-  imports: [GestorModule, UsuarioModule, ClienteModule, ReporteModule],
+  imports: [GestorModule, UsuarioModule, ClienteModule, ReporteModule, TransferenciaModule, TemaEducativoModule, RecursoEducativoModule,
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'postgres',
+      database: 'invictum',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      dropSchema: false,
+      synchronize: true,
+      keepConnectionAlive: true
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

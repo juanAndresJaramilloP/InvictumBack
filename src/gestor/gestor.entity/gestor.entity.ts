@@ -1,15 +1,10 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { ReporteEntity } from '../../reporte/reporte.entity/reporte.entity';
+import { Column, Entity } from 'typeorm';
+import { UsuarioEntity } from '../../usuario/usuario.entity/usuario.entity';
 
 @Entity()
-export class GestorEntity {
-
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
-
+export class GestorEntity extends UsuarioEntity{
+    
     @Column()
     aba: number;
 
-    @OneToMany(() => ReporteEntity, reporte => reporte.gestor)
-    reportes: ReporteEntity[];
 }

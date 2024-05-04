@@ -1,6 +1,5 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { GestorEntity } from '../../gestor/gestor.entity/gestor.entity';
-import { ClienteEntity } from '../../cliente/cliente.entity/cliente.entity';
+import { UsuarioEntity } from 'src/usuario/usuario.entity/usuario.entity';
 
 @Entity()
 export class ReporteEntity {
@@ -11,9 +10,6 @@ export class ReporteEntity {
     @Column()
     archivo: string;
 
-    @ManyToOne(() => GestorEntity, gestor => gestor.reportes)
-    gestor: GestorEntity;
-
-    @ManyToOne(() => ClienteEntity, cliente => cliente.reportes)
-    cliente: ClienteEntity;
+    @ManyToOne(() => UsuarioEntity, usuario => usuario.reportes)
+    usuario: UsuarioEntity;
 }
