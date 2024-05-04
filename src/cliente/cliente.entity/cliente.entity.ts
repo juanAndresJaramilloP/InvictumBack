@@ -1,8 +1,8 @@
-import { Column, Entity, OneToMany } from 'typeorm';
+import { ChildEntity, Column, OneToMany } from 'typeorm';
 import { UsuarioEntity } from '../../usuario/usuario.entity/usuario.entity';
 import { TransferenciaEntity } from '../../transferencia/transferencia.entity/transferencia.entity';
 
-@Entity()
+@ChildEntity()
 export class ClienteEntity extends UsuarioEntity{
 
     @Column()

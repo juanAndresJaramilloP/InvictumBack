@@ -1,6 +1,8 @@
-import { Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, OneToMany, PrimaryGeneratedColumn, TableInheritance, Entity } from 'typeorm';
 import { ReporteEntity } from '../../reporte/reporte.entity/reporte.entity';
 
+@Entity()
+@TableInheritance({ column: { type: 'varchar', name: 'type' } })
 export abstract class UsuarioEntity {
 
     @PrimaryGeneratedColumn('uuid')

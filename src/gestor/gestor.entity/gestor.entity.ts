@@ -1,7 +1,7 @@
-import { Column, Entity } from 'typeorm';
+import { ChildEntity, Column } from 'typeorm';
 import { UsuarioEntity } from '../../usuario/usuario.entity/usuario.entity';
 
-@Entity()
+@ChildEntity()
 export class GestorEntity extends UsuarioEntity{
     
     @Column()
