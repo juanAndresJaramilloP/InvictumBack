@@ -17,7 +17,7 @@ import { RecursoEducativoModule } from './recurso-educativo/recurso-educativo.mo
       port: 5432,
       username: 'postgres',
       password: 'postgres',
-      database: 'invictum',
+      database: 'Invictum',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       dropSchema: true,
       synchronize: true,
