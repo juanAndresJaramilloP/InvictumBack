@@ -12,6 +12,7 @@ describe('TemaeducativoRecursoeducativoService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [...TypeOrmTestingConfig()],
       providers: [TemaeducativoRecursoeducativoService],
     }).compile();
 

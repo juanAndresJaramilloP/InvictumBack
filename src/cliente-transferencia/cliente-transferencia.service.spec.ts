@@ -53,4 +53,54 @@ describe('ClienteTransferenciaService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('addTransferenciaCliente should add a transferencia to a cliente', async () => {
+    const transferencia = await transferenciaRepository.save({
+      monto: faker.number.int(),
+      tipo: Number(faker.number.binary()),
+    });
+
+    const clienteWithTransferencia = await service.addTransferenciaCliente(cliente.id, transferencia.id);
+    expect(clienteWithTransferencia.transferencias).toHaveLength(6);
+    expect(clienteWithTransferencia.transferencias).toContainEqual(transferencia);
+  });
+
+  it('addTransferenciaCliente should throw an error if the client does not exist', async () => {
+    const transferencia = await transferenciaRepository.save({
+      monto: faker.number.int(),
+      tipo: Number(faker.number.binary()),
+    });
+
+    await expect(service.addTransferenciaCliente("0", transferencia.id)).rejects.toHaveProperty('message', 'The client with the given id was not found');
+  });
+
+  it('addTransferenciaCliente should throw an error if the transferencia does not exist', async () => {
+    await expect(service.addTransferenciaCliente(cliente.id, "0")).rejects.toHaveProperty('message', 'The transfer with the given id was not found');
+  });
+
+  it('getTransferenciasCliente should get all transferencias from a cliente', async () => {
+    const transferencias = await service.getTransferenciasCliente(cliente.id);
+    expect(transferencias).toHaveLength(5);
+    expect(transferencias).toEqual(transferenciaList);
+  });
+
+  it('getTransferenciasCliente should throw an error if the client does not exist', async () => {
+    await expect(service.getTransferenciasCliente("0")).rejects.toHaveProperty('message', 'The client with the given id was not found');
+  });
+
+  it('getTransferenciaCliente should get a transferencia from a cliente', async () => {
+    const transferencia = transferenciaList[0];
+    const transferenciaFound = await service.getTransferenciaCliente(cliente.id, transferencia.id);
+    expect(transferenciaFound).toEqual(transferencia);
+  });
+
+  it('getTransferenciaCliente should throw an error if the client does not exist', async () => {
+    const transferencia = transferenciaList[0];
+    await expect(service.getTransferenciaCliente("0", transferencia.id)).rejects.toHaveProperty('message', 'The client with the given id was not found');
+  });
+
+  it('getTransferenciaCliente should throw an error if the transferencia does not exist', async () => {
+    await expect(service.getTransferenciaCliente(cliente.id, "0")).rejects.toHaveProperty('message', 'The transfer with the given id was not found');
+  });
+  
 });
