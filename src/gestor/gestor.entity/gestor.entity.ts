@@ -1,5 +1,5 @@
 import { Entity, Column,PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { ReporteEntity } from 'src/reporte/reporte.entity/reporte.entity';
+import { ReporteEntity } from '../../reporte/reporte.entity/reporte.entity';
 
 @Entity()
 export class GestorEntity {

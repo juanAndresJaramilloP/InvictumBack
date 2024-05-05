@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { ClienteEntity } from 'src/cliente/cliente.entity/cliente.entity';
-import { GestorEntity } from 'src/gestor/gestor.entity/gestor.entity';
+import { ClienteEntity } from '../../cliente/cliente.entity/cliente.entity';
+import { GestorEntity } from '../../gestor/gestor.entity/gestor.entity';
 
 @Entity()
 export class ReporteEntity {

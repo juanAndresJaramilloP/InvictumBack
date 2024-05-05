@@ -8,6 +8,10 @@ import { ReporteModule } from './reporte/reporte.module';
 import {TransferenciaModule} from './transferencia/transferencia.module';
 import { TemaEducativoModule } from './tema-educativo/tema-educativo.module';
 import { RecursoEducativoModule } from './recurso-educativo/recurso-educativo.module';
+import { ClienteReporteModule } from './cliente-reporte/cliente-reporte.module';
+import { GestorReporteModule } from './gestor-reporte/gestor-reporte.module';
+import { ClienteTransferenciaModule } from './cliente-transferencia/cliente-transferencia.module';
+import { TemaeducativoRecursoeducativoModule } from './temaeducativo-recursoeducativo/temaeducativo-recursoeducativo.module';
 
 @Module({
   imports: [GestorModule, ClienteModule, ReporteModule, TransferenciaModule, TemaEducativoModule, RecursoEducativoModule,
@@ -23,6 +27,10 @@ import { RecursoEducativoModule } from './recurso-educativo/recurso-educativo.mo
       synchronize: true,
       keepConnectionAlive: true
     }),
+    ClienteReporteModule,
+    GestorReporteModule,
+    ClienteTransferenciaModule,
+    TemaeducativoRecursoeducativoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
