@@ -4,6 +4,7 @@ import { RecursoEducativoEntity } from './recurso-educativo.entity/recurso-educa
 import { TypeOrmTestingConfig } from '../shared/testing-utils/typeorm-testing-config';
 import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { faker } from '@faker-js/faker';
 
 describe('RecursoEducativoService', () => {
   let service: RecursoEducativoService;
