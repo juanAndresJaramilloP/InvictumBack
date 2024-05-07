@@ -11,4 +11,8 @@ export class TransferenciaService {
         @InjectRepository(TransferenciaEntity)
         private readonly transferenciaRepository: Repository<TransferenciaEntity>
     ){}
+
+    async create(transferencia: TransferenciaEntity): Promise<TransferenciaEntity> {
+        return await this.transferenciaRepository.save(transferencia);
+    }
 }
