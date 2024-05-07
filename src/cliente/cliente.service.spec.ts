@@ -68,7 +68,7 @@ describe('ClienteService', () => {
     }
   });
 
-  it('should create a new client', async () => {
+  it('Create should create a new client', async () => {
     const newClient: ClienteEntity = {
       id: "",
       nombre: 'John Doe',
@@ -87,7 +87,7 @@ describe('ClienteService', () => {
     expect(result.balance).toEqual(newClient.balance);
   });
 
-  it('should update a client by id', async () => {
+  it('Update should update a client by id', async () => {
     const client = clienteList[0];
     client.nombre = 'Jane Doe';
     client.contrasena = 'newpassword';
@@ -101,7 +101,7 @@ describe('ClienteService', () => {
 
   });
 
-  it('update should throw an exception for an invalid client', async () => {
+  it('Update should throw an exception for an invalid client', async () => {
     let client: ClienteEntity = clienteList[0];
     client = {
       ...client, nombre: "New name", contrasena: "newpassword"
@@ -109,14 +109,14 @@ describe('ClienteService', () => {
     await expect(() => service.update("0", client)).rejects.toHaveProperty("message", "The client with the given id was not found");
   });
 
-  it('should delete a client by id', async () => {
+  it('Delete should delete a client by id', async () => {
     const clientId = clienteList[0].id;
     await service.delete(clientId);
     const result = await repository.findOne({where:{id: clientId}});
     expect(result).toBeNull();
   });
 
-  it('delete should throw an exception for an invalid client', async () => {
+  it('Delete should throw an exception for an invalid client', async () => {
     const client: ClienteEntity = clienteList[0];
     await service.delete(client.id);
     await expect(() => service.delete("0")).rejects.toHaveProperty("message", "The client with the given id was not found")

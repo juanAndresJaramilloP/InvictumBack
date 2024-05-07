@@ -22,7 +22,7 @@ export class TemaeducativoRecursoeducativoService {
 
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The theme with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         const recurso: RecursoEducativoEntity = await this.recursoEducativoRepository.findOne({ where: { id: idRecurso } });
@@ -39,7 +39,7 @@ export class TemaeducativoRecursoeducativoService {
 
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The theme with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         const recurso: RecursoEducativoEntity = await this.recursoEducativoRepository.findOne({ where: { id: idRecurso } });
@@ -56,7 +56,7 @@ export class TemaeducativoRecursoeducativoService {
 
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The theme with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         return tema.recursos;
@@ -66,7 +66,7 @@ export class TemaeducativoRecursoeducativoService {
 
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The theme with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         const recurso: RecursoEducativoEntity = tema.recursos.find(r => r.id === idRecurso);
@@ -81,7 +81,7 @@ export class TemaeducativoRecursoeducativoService {
 
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The educational category with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         for (let i = 0; i < recursos.length; i++) {
