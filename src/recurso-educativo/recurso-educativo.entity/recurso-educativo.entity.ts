@@ -10,6 +10,9 @@ export class RecursoEducativoEntity {
     @Column()
     url: string;
 
+    @Column()
+    name: string;
+
     @ManyToOne(() => TemaEducativoEntity, tema => tema.recursos)
     tema: TemaEducativoEntity;
 }
