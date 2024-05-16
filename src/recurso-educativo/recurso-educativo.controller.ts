@@ -6,7 +6,7 @@ import { BusinessErrorsInterceptor } from '../shared/interceptors/business-error
 import { plainToInstance } from 'class-transformer';
 
 
-@Controller('recursoseducativos')
+@Controller('recursos-educativos')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class RecursoEducativoController {
 

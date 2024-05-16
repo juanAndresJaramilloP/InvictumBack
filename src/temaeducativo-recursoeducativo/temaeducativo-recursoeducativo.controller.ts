@@ -5,16 +5,16 @@ import { plainToInstance } from 'class-transformer';
 import { RecursoEducativoEntity } from 'src/recurso-educativo/recurso-educativo.entity/recurso-educativo.entity';
 import { RecursoEducativoDto } from 'src/recurso-educativo/recurso-educativo.dto';
 
-@Controller('tema-educativo')
+@Controller('temas-educativos')
 export class RecursoTemaController {
     constructor(private readonly temaEducativoRecursoEducativoService: TemaeducativoRecursoeducativoService){}
 
-    @Post(':temaEducativoId/recursoEducativo/:recursoEducativoId')
+    @Post(':temaEducativoId/recursosEducativos/:recursoEducativoId')
     async addRecursoTema(@Param('temaEducativoId') temaEducativoId: string, @Param('recursoEducativoId') recursoEducativoId: string){
         return await this.temaEducativoRecursoEducativoService.addRecursoEducativoTema(temaEducativoId, recursoEducativoId);
     }
 
-    @Get(':temaEducativoId/recursoEducativos/:recursoEducativoId')
+    @Get(':temaEducativoId/recursosEducativos/:recursoEducativoId')
     async findRecursoByTemaIdAndRecursoId(@Param('temaEducativoId') temaEducativoId: string, @Param('recursoEducativoId') recursoEducativoId: string){
         return await this.temaEducativoRecursoEducativoService.getTemaRecurso(temaEducativoId, recursoEducativoId);
     }

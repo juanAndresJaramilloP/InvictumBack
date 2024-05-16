@@ -6,10 +6,14 @@ import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UseIntercept
 import { TemaEducativoEntity } from './tema-educativo.entity/tema-educativo.entity';
 import { plainToInstance } from 'class-transformer';
 
-@Controller('tema-educativo')
+@Controller('temas-educativos')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class TemaEducativoController {
-    constructor(private readonly temaEducativoService: TemaEducativoService) { }
+
+    constructor(
+        private readonly temaEducativoService: TemaEducativoService
+    ){ }
+
     @Get()
     async findAll() {
     return await this.temaEducativoService.findAll();
