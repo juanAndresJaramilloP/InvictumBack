@@ -12,14 +12,13 @@ import { ClienteReporteModule } from './cliente-reporte/cliente-reporte.module';
 import { GestorReporteModule } from './gestor-reporte/gestor-reporte.module';
 import { ClienteTransferenciaModule } from './cliente-transferencia/cliente-transferencia.module';
 import { TemaeducativoRecursoeducativoModule } from './temaeducativo-recursoeducativo/temaeducativo-recursoeducativo.module';
-import { RecursoTemaController } from './temaeducativo-recursoeducativo/temaeducativo-recursoeducativo.controller';
 
 @Module({
   imports: [GestorModule, ClienteModule, ReporteModule, TransferenciaModule, TemaEducativoModule, RecursoEducativoModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5433,
+      port: 5432,
       username: 'postgres',
       password: 'postgres',
       database: 'Invictum',
@@ -33,7 +32,7 @@ import { RecursoTemaController } from './temaeducativo-recursoeducativo/temaeduc
     ClienteTransferenciaModule,
     TemaeducativoRecursoeducativoModule,
   ],
-  controllers: [AppController, RecursoTemaController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
