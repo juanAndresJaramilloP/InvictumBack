@@ -34,6 +34,50 @@ export class TemaeducativoRecursoeducativoService {
 
         return await this.temaEducativoRepository.save(tema);
     }
+    async getTemaRecurso(idTema: string, idRecurso: string): Promise<RecursoEducativoEntity> {
+
+        const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
+        if (!tema) {
+            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
+        }
+
+        const recurso: RecursoEducativoEntity = tema.recursos.find(r => r.id === idRecurso);
+        if (!recurso) {
+            throw new BusinessLogicException("The educational resource with the given id was not found", BusinessError.NOT_FOUND);
+        }
+
+        return recurso;
+    }
+
+    
+    async getRecursosTema(idTema: string): Promise<RecursoEducativoEntity[]> {
+
+        const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
+        if (!tema) {
+            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
+        }
+
+        return tema.recursos;
+    }
+
+  
+
+    async associateRecursosTema(idTema: string, recursos: RecursoEducativoEntity[]): Promise<TemaEducativoEntity> {
+
+        const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
+        if (!tema) {
+            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
+        }
+
+        for (let i = 0; i < recursos.length; i++) {
+            const recurso: RecursoEducativoEntity = await this.recursoEducativoRepository.findOne({ where: { id: recursos[i].id } });
+            if (!recurso)
+                throw new BusinessLogicException("The educational resource with the given id was not found", BusinessError.NOT_FOUND)
+        }
+
+        tema.recursos = recursos;
+        return await this.temaEducativoRepository.save(tema);
+    }
 
     async removeRecursoEducativoTema(idTema: string, idRecurso: string): Promise<TemaEducativoEntity> {
 
@@ -52,45 +96,4 @@ export class TemaeducativoRecursoeducativoService {
         return await this.temaEducativoRepository.save(tema);
     }
 
-    async getRecursosTema(idTema: string): Promise<RecursoEducativoEntity[]> {
-
-        const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
-        if (!tema) {
-            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
-        }
-
-        return tema.recursos;
-    }
-
-    async getTemaRecurso(idTema: string, idRecurso: string): Promise<RecursoEducativoEntity> {
-
-        const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
-        if (!tema) {
-            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
-        }
-
-        const recurso: RecursoEducativoEntity = tema.recursos.find(r => r.id === idRecurso);
-        if (!recurso) {
-            throw new BusinessLogicException("The educational resource with the given id was not found", BusinessError.NOT_FOUND);
-        }
-
-        return recurso;
-    }
-
-    async associateRecursosTema(idTema: string, recursos: RecursoEducativoEntity[]): Promise<TemaEducativoEntity> {
-
-        const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
-        if (!tema) {
-            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
-        }
-
-        for (let i = 0; i < recursos.length; i++) {
-            const recurso: RecursoEducativoEntity = await this.recursoEducativoRepository.findOne({ where: { id: recursos[i].id } });
-            if (!recurso)
-                throw new BusinessLogicException("The educational resource with the given id was not found", BusinessError.NOT_FOUND)
-        }
-
-        tema.recursos = recursos;
-        return await this.temaEducativoRepository.save(tema);
-    }
 }

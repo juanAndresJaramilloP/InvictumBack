@@ -28,6 +28,8 @@ describe('RecursoEducativoService', () => {
     for(let i = 0; i < 5; i++){
       const recurso: RecursoEducativoEntity = await repository.save({
         url: faker.internet.url(),
+        name: faker.person.firstName()
+
       });
       recursoEducativoList.push(recurso);
     }
@@ -48,6 +50,7 @@ describe('RecursoEducativoService', () => {
     const result = await service.findOne(storedRecurso.id);
     expect(result).not.toBeNull();
     expect(result.url).toEqual(storedRecurso.url);
+    expect(result.name).toEqual(storedRecurso.name);
   });
 
   it('FindOne should throw an exception when the educational resource does not exist', async () => {
@@ -63,22 +66,25 @@ describe('RecursoEducativoService', () => {
     const newRecurso: RecursoEducativoEntity = {
       id:"",
       url: faker.internet.url(),
-      tema: null
+      tema: null,
+      name: faker.person.firstName()
     };
     const result = await service.create(newRecurso);
     expect(result).not.toBeNull();
     expect(result.url).toEqual(newRecurso.url);
+    expect(result.name).toEqual(newRecurso.name);
   });
 
   it('Update should modify an existing educational resource', async () => {
     const storedRecurso: RecursoEducativoEntity = recursoEducativoList[0];
     storedRecurso.url = faker.internet.url();
-
+    storedRecurso.name = faker.person.firstName();
     const result = await service.update(storedRecurso.id, storedRecurso);
     const storedRecursoModified: RecursoEducativoEntity = await repository.findOne({where:{id: storedRecurso.id}});
     
     expect(storedRecursoModified).not.toBeNull();
     expect(storedRecursoModified.url).toEqual(result.url);
+    expect(storedRecursoModified.name).toEqual(result.name);
   });
 
   it('Update should throw an exception when the educational resource does not exist', async () => {
@@ -86,7 +92,8 @@ describe('RecursoEducativoService', () => {
     const newRecurso: RecursoEducativoEntity = {
       id: id,
       url: faker.internet.url(),
-      tema: null
+      tema: null,
+      name: faker.person.firstName()
     }
     try {
       await service.update(id, newRecurso);
