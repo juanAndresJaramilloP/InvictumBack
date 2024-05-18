@@ -18,7 +18,7 @@ import { TemaeducativoRecursoeducativoModule } from './temaeducativo-recursoeduc
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5432,
+      port: 5433,
       username: 'postgres',
       password: 'postgres',
       database: 'Invictum',

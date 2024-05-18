@@ -6,6 +6,7 @@ import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UseIntercept
 import { TemaEducativoEntity } from './tema-educativo.entity/tema-educativo.entity';
 import { plainToInstance } from 'class-transformer';
 
+
 @Controller('temas-educativos')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class TemaEducativoController {
