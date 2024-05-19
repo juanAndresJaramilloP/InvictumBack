@@ -19,24 +19,34 @@ export class ClienteTransferenciaService {
     ){}
 
 
-    async addTransferenciaCliente(idCliente: string, idTransferencia: string): Promise<ClienteEntity> {
+    async addTransferenciaCliente(idCliente: string, transferencia: TransferenciaEntity): Promise<ClienteEntity> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idCliente)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
 
         const cliente: ClienteEntity = await this.clienteRepository.findOne({ where: { id: idCliente }, relations: ['transferencias'] });
         if (!cliente) {
             throw new BusinessLogicException("The client with the given id was not found", BusinessError.NOT_FOUND);
         }
 
-        const transferencia: TransferenciaEntity = await this.transferenciaRepository.findOne({ where: { id: idTransferencia } });
-        if (!transferencia) {
-            throw new BusinessLogicException("The transfer with the given id was not found", BusinessError.NOT_FOUND);
-        }
+        // const transferencia: TransferenciaEntity = await this.transferenciaRepository.findOne({ where: { id: idTransferencia } });
+        // if (!transferencia) {
+        //     throw new BusinessLogicException("The transfer with the given id was not found", BusinessError.NOT_FOUND);
+        // }
 
-        cliente.transferencias.push(transferencia);
+        const transferenciaPersistida: TransferenciaEntity = await this.transferenciaRepository.save(transferencia);
+
+        cliente.transferencias.push(transferenciaPersistida);
 
         return await this.clienteRepository.save(cliente);
     }
 
     async getTransferenciasCliente(idCliente: string): Promise<TransferenciaEntity[]> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idCliente)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
 
         const cliente: ClienteEntity = await this.clienteRepository.findOne({ where: { id: idCliente }, relations: ['transferencias'] });
         if (!cliente) {
@@ -47,6 +57,10 @@ export class ClienteTransferenciaService {
     }
 
     async getTransferenciaCliente(idCliente: string, idTransferencia: string): Promise<TransferenciaEntity> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idCliente) || !/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idTransferencia)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
 
         const cliente: ClienteEntity = await this.clienteRepository.findOne({ where: { id: idCliente }, relations: ['transferencias'] });
         if (!cliente) {

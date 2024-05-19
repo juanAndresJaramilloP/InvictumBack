@@ -17,6 +17,11 @@ export class TransferenciaService {
     }
 
     async findOne(id: string): Promise<TransferenciaEntity> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(id)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const transferencia: TransferenciaEntity = await this.transferenciaRepository.findOne({where:{id}});
         if (!transferencia) {
             throw new BusinessLogicException("The transfer with the given id was not found", BusinessError.NOT_FOUND);
@@ -28,19 +33,4 @@ export class TransferenciaService {
         return await this.transferenciaRepository.save(transferencia);
     }
 
-    async update(id: string, transferencia: TransferenciaEntity): Promise<TransferenciaEntity> {
-        const persistedTransferencia: TransferenciaEntity = await this.transferenciaRepository.findOne({where:{id}});
-        if(!persistedTransferencia) {
-            throw new BusinessLogicException("The transfer with the given id was not found", BusinessError.NOT_FOUND);
-        }
-        return await this.transferenciaRepository.save({...persistedTransferencia, ...transferencia});
-    }
-
-    async delete(id: string): Promise<void> {
-        const persistedTransferencia: TransferenciaEntity = await this.transferenciaRepository.findOne({where:{id}});
-        if(!persistedTransferencia) {
-            throw new BusinessLogicException("The transfer with the given id was not found", BusinessError.NOT_FOUND);
-        }
-        await this.transferenciaRepository.remove(persistedTransferencia);
-    }
 }

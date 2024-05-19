@@ -19,6 +19,10 @@ export class GestorReporteService {
 
     async addReporteGestor(idGestor: string, idReporte: string): Promise<GestorEntity> {
 
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idGestor) || !/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idReporte)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const gestor: GestorEntity = await this.gestorRepository.findOne({ where: { id: idGestor }, relations: ['reportes'] });
         if (!gestor) {
             throw new BusinessLogicException("The manager with the given id was not found", BusinessError.NOT_FOUND);
@@ -35,6 +39,10 @@ export class GestorReporteService {
     }
 
     async removeReporteGestor(idGestor: string, idReporte: string): Promise<GestorEntity> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idGestor) || !/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idReporte)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
 
         const gestor: GestorEntity = await this.gestorRepository.findOne({ where: { id: idGestor }, relations: ['reportes'] });
         if (!gestor) {
@@ -53,6 +61,10 @@ export class GestorReporteService {
 
     async getReportesGestor(idGestor: string): Promise<ReporteEntity[]> {
 
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idGestor)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const gestor: GestorEntity = await this.gestorRepository.findOne({ where: { id: idGestor }, relations: ['reportes'] });
         if (!gestor) {
             throw new BusinessLogicException("The manager with the given id was not found", BusinessError.NOT_FOUND);
@@ -62,6 +74,10 @@ export class GestorReporteService {
     }
 
     async getGestorReporte(idGestor: string, idReporte: string): Promise<ReporteEntity> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idGestor) || !/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idReporte)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
 
         const gestor: GestorEntity = await this.gestorRepository.findOne({ where: { id: idGestor }, relations: ['reportes'] });
         if (!gestor) {
@@ -77,6 +93,10 @@ export class GestorReporteService {
     }
 
     async associateReportesGestor(idGestor: string, reportes: ReporteEntity[]): Promise<GestorEntity> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idGestor)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
 
         const gestor: GestorEntity = await this.gestorRepository.findOne({ where: { id: idGestor }, relations: ['reportes'] });
         if (!gestor) {

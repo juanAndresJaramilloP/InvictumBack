@@ -29,16 +29,5 @@ export class TransferenciaController {
       return await this.transferenciaService.create(transferencia);
     }
 
-    @Put(':transferenciaId')
-    async update(@Param('transferenciaId') transferenciaId: string, @Body() transferenciaDto: TransferenciaDto) {
-      const transferencia: TransferenciaEntity = plainToInstance(TransferenciaEntity, transferenciaDto);
-      return await this.transferenciaService.update(transferenciaId, transferencia);
-    }
-
-    @Delete(':transferenciaId')
-    @HttpCode(204)
-    async delete(@Param('transferenciaId') transferenciaId: string) {
-      return await this.transferenciaService.delete(transferenciaId);
-    }
 
 }

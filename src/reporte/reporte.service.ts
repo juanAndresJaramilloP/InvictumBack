@@ -17,6 +17,11 @@ export class ReporteService {
     }
 
     async findOne(id: string): Promise<ReporteEntity> {
+        
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(id)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const reporte: ReporteEntity = await this.reporteRepository.findOne({where:{id}});
         if (!reporte) {
             throw new BusinessLogicException("The report with the given id was not found", BusinessError.NOT_FOUND);
@@ -29,6 +34,11 @@ export class ReporteService {
     }
 
     async update(id: string, reporte: ReporteEntity): Promise<ReporteEntity> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(id)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const persistedReporte: ReporteEntity = await this.reporteRepository.findOne({where:{id}});
         if(!persistedReporte) {
             throw new BusinessLogicException("The report with the given id was not found", BusinessError.NOT_FOUND);
@@ -37,6 +47,11 @@ export class ReporteService {
     }
 
     async delete(id: string): Promise<void> {
+
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(id)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+        
         const persistedReporte: ReporteEntity = await this.reporteRepository.findOne({where:{id}});
         if(!persistedReporte) {
             throw new BusinessLogicException("The report with the given id was not found", BusinessError.NOT_FOUND);

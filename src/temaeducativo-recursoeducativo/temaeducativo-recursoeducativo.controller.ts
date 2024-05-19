@@ -1,36 +1,37 @@
-import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
-import { TemaeducativoRecursoeducativoService } from './temaEducativo-recursoEducativo.service';
+import { TemaeducativoRecursoeducativoService } from './temaeducativo-recursoeducativo.service';
 import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UseInterceptors } from '@nestjs/common';
 import { plainToInstance } from 'class-transformer';
 import { RecursoEducativoEntity } from 'src/recurso-educativo/recurso-educativo.entity/recurso-educativo.entity';
 import { RecursoEducativoDto } from 'src/recurso-educativo/recurso-educativo.dto';
+import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
 
 @Controller('temas-educativos')
+@UseInterceptors(BusinessErrorsInterceptor)
 export class RecursoTemaController {
     constructor(private readonly temaEducativoRecursoEducativoService: TemaeducativoRecursoeducativoService){}
 
-    @Post(':temaEducativoId/recursosEducativos/:recursoEducativoId')
+    @Post(':temaEducativoId/recursos-educativos/:recursoEducativoId')
     async addRecursoTema(@Param('temaEducativoId') temaEducativoId: string, @Param('recursoEducativoId') recursoEducativoId: string){
         return await this.temaEducativoRecursoEducativoService.addRecursoEducativoTema(temaEducativoId, recursoEducativoId);
     }
 
-    @Get(':temaEducativoId/recursosEducativos/:recursoEducativoId')
+    @Get(':temaEducativoId/recursos-educativos/:recursoEducativoId')
     async findRecursoByTemaIdAndRecursoId(@Param('temaEducativoId') temaEducativoId: string, @Param('recursoEducativoId') recursoEducativoId: string){
         return await this.temaEducativoRecursoEducativoService.getTemaRecurso(temaEducativoId, recursoEducativoId);
     }
 
-    @Get(':temaEducativoId/recursosEducativos')
+    @Get(':temaEducativoId/recursos-educativos')
     async findRecursosByTemaId(@Param('temaEducativoId') temaEducativoId: string){
         return await this.temaEducativoRecursoEducativoService. getRecursosTema(temaEducativoId);
     }
 
-    @Put(':temaEducativoId/recursosEducativos')
+    @Put(':temaEducativoId/recursos-educativos')
     async associateRecursoTema(@Body() recursoEducativoDto: RecursoEducativoDto[], @Param('temaEducativoId') temaEducativoId: string){
         const recursosEducativos = plainToInstance(RecursoEducativoEntity, recursoEducativoDto)
         return await this.temaEducativoRecursoEducativoService.associateRecursosTema(temaEducativoId, recursosEducativos);
     }
 
-    @Delete(':temaEducativoId/recursosEducativos/:recursoEducativoId')
+    @Delete(':temaEducativoId/recursos-educativos/:recursoEducativoId')
     @HttpCode(204)
     async deleteRecursoTema(@Param('temaEducativoId') temaEducativoId: string, @Param('recursoEducativoId') recursoEducativoId: string){
         return await this.temaEducativoRecursoEducativoService.removeRecursoEducativoTema(temaEducativoId, recursoEducativoId);

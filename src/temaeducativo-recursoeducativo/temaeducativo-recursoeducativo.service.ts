@@ -20,9 +20,13 @@ export class TemaeducativoRecursoeducativoService {
 
     async addRecursoEducativoTema(idTema: string, idRecurso: string): Promise<TemaEducativoEntity> {
 
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idTema) || !/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idRecurso)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The educational theme with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         const recurso: RecursoEducativoEntity = await this.recursoEducativoRepository.findOne({ where: { id: idRecurso } });
@@ -36,9 +40,13 @@ export class TemaeducativoRecursoeducativoService {
     }
     async getTemaRecurso(idTema: string, idRecurso: string): Promise<RecursoEducativoEntity> {
 
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idTema) || !/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idRecurso)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The educational theme with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         const recurso: RecursoEducativoEntity = tema.recursos.find(r => r.id === idRecurso);
@@ -52,9 +60,13 @@ export class TemaeducativoRecursoeducativoService {
     
     async getRecursosTema(idTema: string): Promise<RecursoEducativoEntity[]> {
 
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idTema)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The educational theme with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         return tema.recursos;
@@ -64,9 +76,13 @@ export class TemaeducativoRecursoeducativoService {
 
     async associateRecursosTema(idTema: string, recursos: RecursoEducativoEntity[]): Promise<TemaEducativoEntity> {
 
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idTema)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The educational theme with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         for (let i = 0; i < recursos.length; i++) {
@@ -81,9 +97,13 @@ export class TemaeducativoRecursoeducativoService {
 
     async removeRecursoEducativoTema(idTema: string, idRecurso: string): Promise<TemaEducativoEntity> {
 
+        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idTema) || !/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idRecurso)) {
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+        }
+
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
-            throw new BusinessLogicException("The category with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The educational theme with the given id was not found", BusinessError.NOT_FOUND);
         }
 
         const recurso: RecursoEducativoEntity = await this.recursoEducativoRepository.findOne({ where: { id: idRecurso } });
