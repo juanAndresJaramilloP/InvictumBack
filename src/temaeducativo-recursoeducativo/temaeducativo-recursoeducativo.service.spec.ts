@@ -34,6 +34,7 @@ describe('TemaeducativoRecursoeducativoService', () => {
     for(let i = 0; i < 5; i++){
         const recurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
           url: faker.internet.url(),
+          name: faker.string.alpha(),
         })
         recursoList.push(recurso);
     }
@@ -44,9 +45,10 @@ describe('TemaeducativoRecursoeducativoService', () => {
     })
   }
 
-  it('addRecursoEducativoTema should add an educational resource to a category', async () => {
+  it('addRecursoEducativoTema should add an educational resource to a educational theme', async () => {
     const newRecurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
       url: faker.internet.url(),
+      name: faker.string.alpha(),
     });
 
     const newTema: TemaEducativoEntity = await temaEducativoRepository.save({
@@ -63,22 +65,23 @@ describe('TemaeducativoRecursoeducativoService', () => {
   it('addRecursoEducativoTema should return an error if the educational resource does not exists', async () => {
     const newRecurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
       url: faker.internet.url(),
+      name: faker.string.alpha(),
     });
 
-    const temaId = 'invalid_id';
+    const temaId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.addRecursoEducativoTema(temaId, newRecurso.id);
     } catch (error) {
-      expect(error.message).toBe('The category with the given id was not found');
+      expect(error.message).toBe('The educational theme with the given id was not found');
     }
   });
 
-  it('addRecursoEducativoTema should return an error if the category does not exist', async () => {
+  it('addRecursoEducativoTema should return an error if the educational theme does not exist', async () => {
     const newTema: TemaEducativoEntity = await temaEducativoRepository.save({
       nombre: faker.lorem.word(),
     });
 
-    const recursoId = 'invalid_id';
+    const recursoId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.addRecursoEducativoTema(newTema.id, recursoId);
     } catch (error) {
@@ -87,7 +90,7 @@ describe('TemaeducativoRecursoeducativoService', () => {
   });
 
 
-  it('removeRecursoEducativoTema should remove an educational resource from a category', async () => {
+  it('removeRecursoEducativoTema should remove an educational resource from a educational theme', async () => {
     const storedRecurso: RecursoEducativoEntity = recursoList[0];
     const result: TemaEducativoEntity = await service.removeRecursoEducativoTema(tema.id, storedRecurso.id);
     expect(result.recursos.length).toBe(4);
@@ -99,7 +102,7 @@ describe('TemaeducativoRecursoeducativoService', () => {
   });
 
   it('removeRecursoEducativoTema should return an error if the educational resource does not exists', async () => {
-    const recursoId = 'invalid_id';
+    const recursoId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.removeRecursoEducativoTema(tema.id, recursoId);
     } catch (error) {
@@ -107,50 +110,50 @@ describe('TemaeducativoRecursoeducativoService', () => {
     }
   });
 
-  it('removeRecursoEducativoTema should return an error if the category does not exist', async () => {
+  it('removeRecursoEducativoTema should return an error if the educational theme does not exist', async () => {
     const storedRecurso: RecursoEducativoEntity = recursoList[0];
-    const temaId = 'invalid_id';
+    const temaId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.removeRecursoEducativoTema(temaId, storedRecurso.id);
     } catch (error) {
-      expect(error.message).toBe('The category with the given id was not found');
+      expect(error.message).toBe('The educational theme with the given id was not found');
     }
   });
 
-  it('getRecursosTema should get the resources associated to the given category', async () => {
+  it('getRecursosTema should get the resources associated to the given educational theme', async () => {
     const result: RecursoEducativoEntity[] = await service.getRecursosTema(tema.id);
     expect(result).not.toBeNull();
     expect(result).toHaveLength(recursoList.length);
   });
 
-  it('getRecursosTema should return an error if the category does not exist', async () => {
-    const temaId = 'invalid_id';
+  it('getRecursosTema should return an error if the educational theme does not exist', async () => {
+    const temaId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getRecursosTema(temaId);
     } catch (error) {
-      expect(error.message).toBe('The category with the given id was not found');
+      expect(error.message).toBe('The educational theme with the given id was not found');
     }
   });
 
-  it('getTemaRecurso should get the resource associated to the given category', async () => {
+  it('getTemaRecurso should get the resource associated to the given educational theme', async () => {
     const storedRecurso: RecursoEducativoEntity = recursoList[0];
     const result: RecursoEducativoEntity = await service.getTemaRecurso(tema.id, storedRecurso.id);
     expect(result).not.toBeNull();
     expect(result.url).toEqual(storedRecurso.url);
   });
 
-  it('getTemaRecurso should return an error if the category does not exist', async () => {
+  it('getTemaRecurso should return an error if the educational theme does not exist', async () => {
     const storedRecurso: RecursoEducativoEntity = recursoList[0];
-    const temaId = 'invalid_id';
+    const temaId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getTemaRecurso(temaId, storedRecurso.id);
     } catch (error) {
-      expect(error.message).toBe('The category with the given id was not found');
+      expect(error.message).toBe('The educational theme with the given id was not found');
     }
   });
 
   it('getTemaRecurso should return an error if the resource does not exist', async () => {
-    const recursoId = 'invalid_id';
+    const recursoId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getTemaRecurso(tema.id, recursoId);
     } catch (error) {
@@ -158,11 +161,12 @@ describe('TemaeducativoRecursoeducativoService', () => {
     }
   });
 
-  it('associateRecursosTema should associate resources to the given category', async () => {
+  it('associateRecursosTema should associate resources to the given educational theme', async () => {
     const newrecursoList: RecursoEducativoEntity[] = [];
     for(let i = 0; i < 3; i++){
         const recurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
           url: faker.internet.url(),
+          name: faker.string.alpha(),
         })
         newrecursoList.push(recurso);
     }
@@ -171,20 +175,21 @@ describe('TemaeducativoRecursoeducativoService', () => {
     expect(result.recursos.length).toBe(3);
   });
 
-  it('associateRecursosTema should return an error if the category does not exist', async () => {
+  it('associateRecursosTema should return an error if the educational theme does not exist', async () => {
     const newrecursoList: RecursoEducativoEntity[] = [];
     for(let i = 0; i < 3; i++){
         const recurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
           url: faker.internet.url(),
+          name: faker.string.alpha(),
         })
         newrecursoList.push(recurso);
     }
 
-    const temaId = 'invalid_id';
+    const temaId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.associateRecursosTema(temaId, newrecursoList);
     } catch (error) {
-      expect(error.message).toBe('The category with the given id was not found');
+      expect(error.message).toBe('The educational theme with the given id was not found');
     }
   });
 
@@ -193,11 +198,12 @@ describe('TemaeducativoRecursoeducativoService', () => {
     for(let i = 0; i < 3; i++){
         const recurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
           url: faker.internet.url(),
+          name: faker.string.alpha(),
         })
         newrecursoList.push(recurso);
     }
 
-    newrecursoList[0].id = 'invalid_id';
+    newrecursoList[0].id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.associateRecursosTema(tema.id, newrecursoList);
     } catch (error) {

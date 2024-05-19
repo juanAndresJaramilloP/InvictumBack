@@ -79,7 +79,7 @@ describe('ClienteReporteService', () => {
       archivo: faker.internet.url(),
     });
 
-    const clientId = 'invalid_id';
+    const clientId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.addReporteCliente(clientId, newReporte.id);
     } catch (error) {
@@ -96,7 +96,7 @@ describe('ClienteReporteService', () => {
       balance: faker.number.int(),
     });
 
-    const reportId = 'invalid_id';
+    const reportId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.addReporteCliente(newClient.id, reportId);
     } catch (error) {
@@ -111,7 +111,7 @@ describe('ClienteReporteService', () => {
   });
 
   it('getReportesCliente should throw an error if the client does not exist', async () => {
-    const clientId = 'invalid_id';
+    const clientId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getReportesCliente(clientId);
     } catch (error) {
@@ -128,7 +128,7 @@ describe('ClienteReporteService', () => {
 
   it('getClienteReporte should throw an error if the client does not exist', async () => {
     const storedReport: ReporteEntity = reporteList[0];
-    const clientId = 'invalid_id';
+    const clientId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getClienteReporte(clientId, storedReport.id);
     } catch (error) {
@@ -137,7 +137,7 @@ describe('ClienteReporteService', () => {
   });
 
   it('getClienteReporte should throw an error if the report does not exist', async () => {
-    const reportId = 'invalid_id';
+    const reportId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getClienteReporte(cliente.id, reportId);
     } catch (error) {
@@ -158,7 +158,7 @@ describe('ClienteReporteService', () => {
 
   it('removeReporteCliente should throw an error if the client does not exist', async () => {
     const storedReport: ReporteEntity = reporteList[0];
-    const clientId = 'invalid_id';
+    const clientId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.removeReporteCliente(clientId, storedReport.id);
     } catch (error) {
@@ -167,7 +167,7 @@ describe('ClienteReporteService', () => {
   });
 
   it('removeReporteCliente should throw an error if the report does not exist', async () => {
-    const reportId = 'invalid_id';
+    const reportId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.removeReporteCliente(cliente.id, reportId);
     } catch (error) {
@@ -197,7 +197,7 @@ describe('ClienteReporteService', () => {
         newReporteList.push(reporte);
     }
 
-    const clientId = 'invalid_id';
+    const clientId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.associateReportesCliente(clientId, newReporteList);
     } catch (error) {
@@ -214,7 +214,7 @@ describe('ClienteReporteService', () => {
         newReporteList.push(reporte);
     }
 
-    newReporteList[0].id = 'invalid_id';
+    newReporteList[0].id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.associateReportesCliente(cliente.id, newReporteList);
     } catch (error) {

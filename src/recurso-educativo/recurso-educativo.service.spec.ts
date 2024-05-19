@@ -54,7 +54,7 @@ describe('RecursoEducativoService', () => {
   });
 
   it('FindOne should throw an exception when the educational resource does not exist', async () => {
-    const id = 'non_existent_id'
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'
     try {
       await service.findOne(id);
     } catch (error) {
@@ -88,7 +88,7 @@ describe('RecursoEducativoService', () => {
   });
 
   it('Update should throw an exception when the educational resource does not exist', async () => {
-    const id = 'non_existent_id';
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     const newRecurso: RecursoEducativoEntity = {
       id: id,
       url: faker.internet.url(),
@@ -110,7 +110,7 @@ describe('RecursoEducativoService', () => {
   });
 
   it("Delete should throw an exception when the educational resource does not exist", async () => {
-    const id = 'non_existent_id';
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.delete(id);
     } catch (error) {

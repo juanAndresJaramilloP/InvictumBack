@@ -51,7 +51,7 @@ describe('TemaEducativoService', () => {
   });
 
   it('FindOne should throw an exception when the educational theme does not exist', async () => {
-    const id = 'non_existent_id'
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'
     try {
       await service.findOne(id);
     } catch (error) {
@@ -81,7 +81,7 @@ describe('TemaEducativoService', () => {
 
   it('Update should throw an exception when the educational theme does not exist', async () => {
     const storedTema: TemaEducativoEntity = temaList[0];
-    const id = 'non_existent_id'
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'
     storedTema.id = id;
     try {
       await service.update(id, storedTema);
@@ -98,7 +98,7 @@ describe('TemaEducativoService', () => {
   });
 
   it('Delete should throw an exception when the educational theme does not exist', async () => {
-    const id = 'non_existent_id'
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'
     try {
       await service.delete(id);
     } catch (error) {

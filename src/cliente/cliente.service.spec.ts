@@ -60,7 +60,7 @@ describe('ClienteService', () => {
   });
 
   it('findOne should throw an error if the client does not exist', async () => {
-    const clientId = 'invalid_id';
+    const clientId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.findOne(clientId);
     } catch (error) {
@@ -106,7 +106,7 @@ describe('ClienteService', () => {
     client = {
       ...client, nombre: "New name", contrasena: "newpassword"
     }
-    await expect(() => service.update("0", client)).rejects.toHaveProperty("message", "The client with the given id was not found");
+    await expect(() => service.update("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF", client)).rejects.toHaveProperty("message", "The client with the given id was not found");
   });
 
   it('Delete should delete a client by id', async () => {
@@ -119,7 +119,7 @@ describe('ClienteService', () => {
   it('Delete should throw an exception for an invalid client', async () => {
     const client: ClienteEntity = clienteList[0];
     await service.delete(client.id);
-    await expect(() => service.delete("0")).rejects.toHaveProperty("message", "The client with the given id was not found")
+    await expect(() => service.delete("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF")).rejects.toHaveProperty("message", "The client with the given id was not found")
   });
   
 });

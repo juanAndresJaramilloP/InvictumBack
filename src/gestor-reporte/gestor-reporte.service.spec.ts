@@ -78,7 +78,7 @@ describe('GestorReporteService', () => {
       archivo: faker.internet.url(),
     });
 
-    const managerId = 'invalid_id';
+    const managerId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.addReporteGestor(managerId, newReporte.id);
     } catch (error) {
@@ -95,7 +95,7 @@ describe('GestorReporteService', () => {
       aba: faker.number.int(),
     });
 
-    const reportId = 'invalid_id';
+    const reportId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.addReporteGestor(newManager.id, reportId);
     } catch (error) {
@@ -110,7 +110,7 @@ describe('GestorReporteService', () => {
   });
 
   it('getReportesGestor should throw an error if the manager does not exist', async () => {
-    const managerId = 'invalid_id';
+    const managerId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getReportesGestor(managerId);
     } catch (error) {
@@ -127,7 +127,7 @@ describe('GestorReporteService', () => {
 
   it('getGestorReporte should throw an error if the manager does not exist', async () => {
     const storedReport: ReporteEntity = reporteList[0];
-    const managerId = 'invalid_id';
+    const managerId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getGestorReporte(managerId, storedReport.id);
     } catch (error) {
@@ -136,7 +136,7 @@ describe('GestorReporteService', () => {
   });
 
   it('getGestorReporte should throw an error if the report does not exist', async () => {
-    const reportId = 'invalid_id';
+    const reportId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.getGestorReporte(gestor.id, reportId);
     } catch (error) {
@@ -157,7 +157,7 @@ describe('GestorReporteService', () => {
 
   it('removeReporteGestor should throw an error if the manager does not exist', async () => {
     const storedReport: ReporteEntity = reporteList[0];
-    const managerId = 'invalid_id';
+    const managerId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.removeReporteGestor(managerId, storedReport.id);
     } catch (error) {
@@ -166,7 +166,7 @@ describe('GestorReporteService', () => {
   });
 
   it('removeReporteGestor should throw an error if the report does not exist', async () => {
-    const reportId = 'invalid_id';
+    const reportId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.removeReporteGestor(gestor.id, reportId);
     } catch (error) {
@@ -196,7 +196,7 @@ describe('GestorReporteService', () => {
         newReporteList.push(reporte);
     }
 
-    const managerId = 'invalid_id';
+    const managerId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.associateReportesGestor(managerId, newReporteList);
     } catch (error) {
@@ -213,7 +213,7 @@ describe('GestorReporteService', () => {
         newReporteList.push(reporte);
     }
 
-    newReporteList[0].id = 'invalid_id';
+    newReporteList[0].id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.associateReportesGestor(gestor.id, newReporteList);
     } catch (error) {

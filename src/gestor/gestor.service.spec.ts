@@ -59,7 +59,7 @@ describe('GestorService', () => {
   });
 
   it('findOne should throw an error if the manager does not exist', async () => {
-    const managerId = 'invalid_id';
+    const managerId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.findOne(managerId);
     } catch (error) {
@@ -104,7 +104,7 @@ describe('GestorService', () => {
     manager = {
       ...manager, nombre: "New name", contrasena: "newpassword"
     }
-    await expect(() => service.update("0", manager)).rejects.toHaveProperty("message", "The manager with the given id was not found");
+    await expect(() => service.update("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF", manager)).rejects.toHaveProperty("message", "The manager with the given id was not found");
   });
 
   it('should delete a manager by id', async () => {
@@ -117,7 +117,7 @@ describe('GestorService', () => {
   it('delete should throw an exception for an invalid manager', async () => {
     const manager: GestorEntity = gestorList[0];
     await service.delete(manager.id);
-    await expect(() => service.delete("0")).rejects.toHaveProperty("message", "The manager with the given id was not found")
+    await expect(() => service.delete("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF")).rejects.toHaveProperty("message", "The manager with the given id was not found")
   });
 
 });

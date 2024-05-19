@@ -51,7 +51,7 @@ describe('ReporteService', () => {
   });
 
   it('FindOne should throw an exception when the report does not exist', async () => {
-    const id = 'non_existent_id'
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'
     try {
       await service.findOne(id);
     } catch (error) {
@@ -82,7 +82,7 @@ describe('ReporteService', () => {
 
   it('Update should throw an exception when the report does not exist', async () => {
     const storedReporte: ReporteEntity = reporteList[0];
-    const id = 'non_existent_id'
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'
     storedReporte.id = id;
     try {
       await service.update(id, storedReporte);
@@ -99,7 +99,7 @@ describe('ReporteService', () => {
   });
 
   it("Delete should throw an exception when the report does not exist", async () => {
-    const id = 'non_existent_id';
+    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
       await service.delete(id);
     } catch (error) {
