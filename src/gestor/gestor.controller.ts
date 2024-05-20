@@ -27,7 +27,7 @@ export class GestorController {
       return await this.gestorService.findOne(gestorId);
     }
   
-    @UseGuards(JwtAuthGuard)
+    
     @Post()
     async create(@Body() gestorDto: GestorDto) {
       const gestor: GestorEntity = plainToInstance(GestorEntity, gestorDto);
