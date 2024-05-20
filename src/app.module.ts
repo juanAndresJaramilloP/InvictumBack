@@ -12,6 +12,8 @@ import { ClienteReporteModule } from './cliente-reporte/cliente-reporte.module';
 import { GestorReporteModule } from './gestor-reporte/gestor-reporte.module';
 import { ClienteTransferenciaModule } from './cliente-transferencia/cliente-transferencia.module';
 import { TemaeducativoRecursoeducativoModule } from './temaeducativo-recursoeducativo/temaeducativo-recursoeducativo.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [GestorModule, ClienteModule, ReporteModule, TransferenciaModule, TemaEducativoModule, RecursoEducativoModule,
@@ -31,6 +33,8 @@ import { TemaeducativoRecursoeducativoModule } from './temaeducativo-recursoeduc
     GestorReporteModule,
     ClienteTransferenciaModule,
     TemaeducativoRecursoeducativoModule,
+    UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

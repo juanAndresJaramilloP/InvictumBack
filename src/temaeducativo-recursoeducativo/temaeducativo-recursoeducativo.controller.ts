@@ -4,12 +4,15 @@ import { plainToInstance } from 'class-transformer';
 import { RecursoEducativoEntity } from 'src/recurso-educativo/recurso-educativo.entity/recurso-educativo.entity';
 import { RecursoEducativoDto } from 'src/recurso-educativo/recurso-educativo.dto';
 import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { UseGuards } from '@nestjs/common';
 
 @Controller('temas-educativos')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class RecursoTemaController {
     constructor(private readonly temaEducativoRecursoEducativoService: TemaeducativoRecursoeducativoService){}
 
+    @UseGuards(JwtAuthGuard)
     @Post(':temaEducativoId/recursos-educativos/:recursoEducativoId')
     async addRecursoTema(@Param('temaEducativoId') temaEducativoId: string, @Param('recursoEducativoId') recursoEducativoId: string){
         return await this.temaEducativoRecursoEducativoService.addRecursoEducativoTema(temaEducativoId, recursoEducativoId);
@@ -25,12 +28,14 @@ export class RecursoTemaController {
         return await this.temaEducativoRecursoEducativoService. getRecursosTema(temaEducativoId);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Put(':temaEducativoId/recursos-educativos')
     async associateRecursoTema(@Body() recursoEducativoDto: RecursoEducativoDto[], @Param('temaEducativoId') temaEducativoId: string){
         const recursosEducativos = plainToInstance(RecursoEducativoEntity, recursoEducativoDto)
         return await this.temaEducativoRecursoEducativoService.associateRecursosTema(temaEducativoId, recursosEducativos);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Delete(':temaEducativoId/recursos-educativos/:recursoEducativoId')
     @HttpCode(204)
     async deleteRecursoTema(@Param('temaEducativoId') temaEducativoId: string, @Param('recursoEducativoId') recursoEducativoId: string){
