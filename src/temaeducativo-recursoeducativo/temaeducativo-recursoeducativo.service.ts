@@ -74,26 +74,33 @@ export class TemaeducativoRecursoeducativoService {
 
   
 
-    async associateRecursosTema(idTema: string, recursos: RecursoEducativoEntity[]): Promise<TemaEducativoEntity> {
+    async associateRecursosTema(idTema: string, recursosIds: string[]): Promise<TemaEducativoEntity> {
 
         if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idTema)) {
-            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'", BusinessError.BAD_REQUEST);
         }
-
+    
         const tema: TemaEducativoEntity = await this.temaEducativoRepository.findOne({ where: { id: idTema }, relations: ['recursos'] });
         if (!tema) {
             throw new BusinessLogicException("The educational theme with the given id was not found", BusinessError.NOT_FOUND);
         }
-
-        for (let i = 0; i < recursos.length; i++) {
-            const recurso: RecursoEducativoEntity = await this.recursoEducativoRepository.findOne({ where: { id: recursos[i].id } });
-            if (!recurso)
-                throw new BusinessLogicException("The educational resource with the given id was not found", BusinessError.NOT_FOUND)
+    
+        const recursos: RecursoEducativoEntity[] = [];
+        for (let i = 0; i < recursosIds.length; i++) {
+            const recurso: RecursoEducativoEntity = await this.recursoEducativoRepository.findOne({ where: { id: recursosIds[i] } });
+            
+            if (!recurso) {
+                throw new BusinessLogicException("The educational resource with the given id was not found", BusinessError.NOT_FOUND);
+            }
+            
+            recursos.push(recurso);
         }
-
+    
         tema.recursos = recursos;
         return await this.temaEducativoRepository.save(tema);
     }
+    
+
 
     async removeRecursoEducativoTema(idTema: string, idRecurso: string): Promise<TemaEducativoEntity> {
 

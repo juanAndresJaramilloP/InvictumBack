@@ -6,6 +6,7 @@ import { BusinessErrorsInterceptor } from '../shared/interceptors/business-error
 import { plainToInstance } from 'class-transformer';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { UseGuards } from '@nestjs/common';
+import { IdsDto } from 'src/IdsDto';
 
 @Controller('clientes')
 @UseInterceptors(BusinessErrorsInterceptor)
@@ -35,10 +36,10 @@ export class ClienteReporteController {
 
     @UseGuards(JwtAuthGuard)
     @Put(':clienteId/reportes')
-    async associateReportesCliente(@Body() reportesDto: ReporteDto[], @Param('clienteId') clienteId: string){
-        const reportes = plainToInstance(ReporteEntity, reportesDto)
-        return await this.clienteReporteService.associateReportesCliente(clienteId, reportes);
+    async associateReportesCliente(@Body() IdsDto: IdsDto, @Param('clienteId') clienteId: string) {
+        return await this.clienteReporteService.associateReportesCliente(clienteId, IdsDto.Ids);
     }
+    
     
     @UseGuards(JwtAuthGuard)
     @Delete(':clienteId/reportes/:reporteId')

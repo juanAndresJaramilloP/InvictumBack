@@ -6,6 +6,7 @@ import { RecursoEducativoDto } from 'src/recurso-educativo/recurso-educativo.dto
 import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { UseGuards } from '@nestjs/common';
+import { RecursoEducativoIdsDto } from './RecursoEducativoIds.dto'; 
 
 @Controller('temas-educativos')
 @UseInterceptors(BusinessErrorsInterceptor)
@@ -30,9 +31,8 @@ export class RecursoTemaController {
 
     @UseGuards(JwtAuthGuard)
     @Put(':temaEducativoId/recursos-educativos')
-    async associateRecursoTema(@Body() recursoEducativoDto: RecursoEducativoDto[], @Param('temaEducativoId') temaEducativoId: string){
-        const recursosEducativos = plainToInstance(RecursoEducativoEntity, recursoEducativoDto)
-        return await this.temaEducativoRecursoEducativoService.associateRecursosTema(temaEducativoId, recursosEducativos);
+    async associateRecursoTema( @Body() recursoEducativoIdsDto: RecursoEducativoIdsDto, @Param('temaEducativoId') temaEducativoId: string ){
+        return await this.temaEducativoRecursoEducativoService.associateRecursosTema(temaEducativoId, recursoEducativoIdsDto.recursosIds);
     }
 
     @UseGuards(JwtAuthGuard)

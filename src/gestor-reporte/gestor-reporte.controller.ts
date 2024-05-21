@@ -6,6 +6,7 @@ import { BusinessErrorsInterceptor } from '../shared/interceptors/business-error
 import { plainToInstance } from 'class-transformer';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { UseGuards } from '@nestjs/common';
+import { IdsDto } from 'src/IdsDto';
 
 @Controller('gestores')
 @UseInterceptors(BusinessErrorsInterceptor)
@@ -35,9 +36,8 @@ export class GestorReporteController {
 
     @UseGuards(JwtAuthGuard)
     @Put(':gestorId/reportes')
-    async associateReportesGestor(@Body() reportesDto: ReporteDto[], @Param('gestorId') gestorId: string){
-        const reportes = plainToInstance(ReporteEntity, reportesDto)
-        return await this.gestorReporteService.associateReportesGestor(gestorId, reportes);
+    async associateReportesGestor( @Body() IdsDto: IdsDto, @Param('gestorId') gestorId: string ) {
+        return await this.gestorReporteService.associateReportesGestor(gestorId, IdsDto.Ids);
     }
     
     @UseGuards(JwtAuthGuard)

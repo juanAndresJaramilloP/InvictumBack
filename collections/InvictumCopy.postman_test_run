@@ -1,22 +1,22 @@
 {
-	"id": "f6c466c5-71aa-4028-bcc6-c3f055f0db64",
-	"name": "Invictum",
-	"timestamp": "2024-05-20T00:52:23.144Z",
-	"collection_id": "25530529-b0845ab4-6571-416a-bf07-e33b5a8bea39",
+	"id": "f39796b9-9cd0-42f5-8a48-a19750ddd4eb",
+	"name": "Invictum Copy",
+	"timestamp": "2024-05-21T03:05:46.207Z",
+	"collection_id": "23415404-008bdddd-488e-4bec-839e-edfce5d44f2a",
 	"folder_id": 0,
 	"environment_id": "0",
-	"totalPass": 156,
-	"delay": "7",
+	"totalPass": 162,
+	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2024-05-20T00:52:19.948Z",
+	"startedAt": "2024-05-21T03:05:22.936Z",
 	"totalFail": 0,
 	"results": [
 		{
-			"id": "7125b3f0-bfad-428d-8e23-d80737952c52",
+			"id": "f84f67f4-c432-4c92-9bda-2822b183722f",
 			"name": "Add a Manager Copy",
 			"url": "http://localhost:3000/api/v1/gestores",
-			"time": 45,
+			"time": 35,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -31,7 +31,7 @@
 				}
 			},
 			"times": [
-				45
+				35
 			],
 			"allTests": [
 				{
@@ -40,10 +40,10 @@
 			]
 		},
 		{
-			"id": "a9046a1e-3c9e-4c1b-8216-7209d5c5f8e3",
-			"name": "Add a Client Copy",
+			"id": "7708f2e5-ca38-473a-b2c9-b23932961741",
+			"name": "Add a Client",
 			"url": "http://localhost:3000/api/v1/clientes",
-			"time": 11,
+			"time": 4,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -58,7 +58,7 @@
 				}
 			},
 			"times": [
-				11
+				4
 			],
 			"allTests": [
 				{
@@ -67,10 +67,10 @@
 			]
 		},
 		{
-			"id": "399169be-cc62-4e7b-816e-a59b6ff50a63",
+			"id": "bc5b51bb-4288-45d9-a0e1-59ecb71f3ede",
 			"name": "LoginCliente",
 			"url": "http://localhost:3000/api/v1/users/login",
-			"time": 29,
+			"time": 5,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -85,7 +85,7 @@
 				}
 			},
 			"times": [
-				29
+				5
 			],
 			"allTests": [
 				{
@@ -94,7 +94,7 @@
 			]
 		},
 		{
-			"id": "b91ff09a-f082-4fef-b205-c38692c5d9f6",
+			"id": "36f0878f-aa09-4791-be51-d64b4a9f29c0",
 			"name": "LoginGestor",
 			"url": "http://localhost:3000/api/v1/users/login",
 			"time": 3,
@@ -121,10 +121,10 @@
 			]
 		},
 		{
-			"id": "1f68dee1-a778-4490-a740-b6a0f5fa3352",
+			"id": "a116f17f-bace-437c-bed2-3d5e31704dd4",
 			"name": "LoginInvalidUsername",
 			"url": "http://localhost:3000/api/v1/users/login",
-			"time": 7,
+			"time": 3,
 			"responseCode": {
 				"code": 401,
 				"name": "Unauthorized"
@@ -144,7 +144,7 @@
 				}
 			},
 			"times": [
-				7
+				3
 			],
 			"allTests": [
 				{
@@ -154,10 +154,10 @@
 			]
 		},
 		{
-			"id": "f3c1442b-2cfa-480f-9dba-b41fe57c2dc1",
+			"id": "a62bef38-3d31-47d4-958a-37692b64c511",
 			"name": "LoginInvalidPassword",
 			"url": "http://localhost:3000/api/v1/users/login",
-			"time": 4,
+			"time": 3,
 			"responseCode": {
 				"code": 401,
 				"name": "Unauthorized"
@@ -177,7 +177,7 @@
 				}
 			},
 			"times": [
-				4
+				3
 			],
 			"allTests": [
 				{
@@ -187,10 +187,10 @@
 			]
 		},
 		{
-			"id": "f73fdee9-08a5-4fb8-8917-ac9accd15213",
+			"id": "d9fc9041-2017-4cc0-9870-6d7be28c50c7",
 			"name": "Add an educational resource",
 			"url": "http://localhost:3000/api/v1/recursos-educativos",
-			"time": 10,
+			"time": 4,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -205,7 +205,7 @@
 				}
 			},
 			"times": [
-				10
+				4
 			],
 			"allTests": [
 				{
@@ -214,10 +214,10 @@
 			]
 		},
 		{
-			"id": "2f0b5706-e550-4fee-8bdb-2c220287c041",
+			"id": "bb90453c-f8d9-4b17-bae7-2173d7533ce5",
 			"name": "Get an EducationalResource",
-			"url": "http://localhost:3000/api/v1/recursos-educativos/089b78cf-df9d-480a-a146-616bdc6d13a7",
-			"time": 10,
+			"url": "http://localhost:3000/api/v1/recursos-educativos/63db9e26-5e67-4706-a10e-c5139aacc9a9",
+			"time": 4,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -232,7 +232,7 @@
 				}
 			},
 			"times": [
-				10
+				4
 			],
 			"allTests": [
 				{
@@ -241,10 +241,10 @@
 			]
 		},
 		{
-			"id": "bd49dd71-c528-4b07-a399-22a44e2b847b",
+			"id": "ecb95802-24e1-4d22-8413-295d477a9cd4",
 			"name": "Get nonexistent educational resource",
 			"url": "http://localhost:3000/api/v1/recursos-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 7,
+			"time": 2,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -264,7 +264,7 @@
 				}
 			},
 			"times": [
-				7
+				2
 			],
 			"allTests": [
 				{
@@ -274,10 +274,10 @@
 			]
 		},
 		{
-			"id": "ab973428-bdcd-4b43-9aa0-cb0e8711d5bb",
+			"id": "9bdf3c5a-3808-4b41-9ce3-e65a5c59dca6",
 			"name": "Get all educational resources",
 			"url": "http://localhost:3000/api/v1/recursos-educativos",
-			"time": 4,
+			"time": 3,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -297,7 +297,7 @@
 				}
 			},
 			"times": [
-				4
+				3
 			],
 			"allTests": [
 				{
@@ -307,156 +307,9 @@
 			]
 		},
 		{
-			"id": "c8fbf5c9-8a37-47cb-86de-7131fa77bd6b",
+			"id": "7bb2d980-43cb-4b90-8206-8c7a520bc93d",
 			"name": "Update an educational resource",
-			"url": "http://localhost:3000/api/v1/recursos-educativos/089b78cf-df9d-480a-a146-616bdc6d13a7",
-			"time": 12,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				12
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "1bf52de7-b226-4277-8a52-c0a959a28ede",
-			"name": "Update a nonexistent educational resource",
-			"url": "http://localhost:3000/api/v1/recursos-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 10,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				10
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "15b475ad-cb6b-4546-9953-fabffb713793",
-			"name": "Delete an educational resource",
-			"url": "http://localhost:3000/api/v1/recursos-educativos/089b78cf-df9d-480a-a146-616bdc6d13a7",
-			"time": 12,
-			"responseCode": {
-				"code": 204,
-				"name": "No Content"
-			},
-			"tests": {
-				"Status code is 204": true
-			},
-			"testPassFailCounts": {
-				"Status code is 204": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				12
-			],
-			"allTests": [
-				{
-					"Status code is 204": true
-				}
-			]
-		},
-		{
-			"id": "0a236312-9209-4ab7-825b-2e7473b16ea4",
-			"name": "Delete nonexistent educational resource",
-			"url": "http://localhost:3000/api/v1/recursos-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 6,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				6
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "76162702-3fb8-4f2b-8483-0a7a6c52fa5e",
-			"name": "Add an educational topic",
-			"url": "http://localhost:3000/api/v1/temas-educativos",
-			"time": 6,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Status code is 201": true
-			},
-			"testPassFailCounts": {
-				"Status code is 201": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				6
-			],
-			"allTests": [
-				{
-					"Status code is 201": true
-				}
-			]
-		},
-		{
-			"id": "f7db5c95-802a-4d1d-9f47-52f19bf7dbfe",
-			"name": "Get an EducationalTopic",
-			"url": "http://localhost:3000/api/v1/temas-educativos/efc048f7-2951-4516-a570-e15d54484af3",
+			"url": "http://localhost:3000/api/v1/recursos-educativos/63db9e26-5e67-4706-a10e-c5139aacc9a9",
 			"time": 4,
 			"responseCode": {
 				"code": 200,
@@ -481,7 +334,154 @@
 			]
 		},
 		{
-			"id": "13542136-d3e8-47e6-b56d-316dcc049940",
+			"id": "e2df347c-0939-45c7-8150-a4813dea5834",
+			"name": "Update a nonexistent educational resource",
+			"url": "http://localhost:3000/api/v1/recursos-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "d60409e9-d04a-43cc-be8a-478982bd9de4",
+			"name": "Delete an educational resource",
+			"url": "http://localhost:3000/api/v1/recursos-educativos/63db9e26-5e67-4706-a10e-c5139aacc9a9",
+			"time": 4,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "f6146417-5130-4bc6-b6ad-9432757e2731",
+			"name": "Delete nonexistent educational resource",
+			"url": "http://localhost:3000/api/v1/recursos-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "76cea4d0-d4d9-45f0-8111-770c4144dd2b",
+			"name": "Add an educational topic",
+			"url": "http://localhost:3000/api/v1/temas-educativos",
+			"time": 4,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "8fc41482-4398-4074-9a13-d951f459c06a",
+			"name": "Get an EducationalTopic",
+			"url": "http://localhost:3000/api/v1/temas-educativos/11e2e6a5-9df3-46a1-bb19-b6d05a39ab59",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "421f66e1-b41a-403e-a3c8-35a095f442d0",
 			"name": "Get nonexistent educational topic",
 			"url": "http://localhost:3000/api/v1/temas-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
@@ -514,10 +514,10 @@
 			]
 		},
 		{
-			"id": "795bd662-431e-4053-9eae-c0d6e81557f1",
+			"id": "9781d103-14a8-4f80-8ccc-17fd0585465b",
 			"name": "Get all educational topics",
 			"url": "http://localhost:3000/api/v1/temas-educativos",
-			"time": 5,
+			"time": 2,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -537,7 +537,7 @@
 				}
 			},
 			"times": [
-				5
+				2
 			],
 			"allTests": [
 				{
@@ -547,9 +547,9 @@
 			]
 		},
 		{
-			"id": "0162fe7b-5cf0-4d3f-ae44-1a3b74bcd2e6",
+			"id": "47a9b468-ddd2-498b-aaaf-8b0ca90ead9c",
 			"name": "Update an educational topic",
-			"url": "http://localhost:3000/api/v1/temas-educativos/efc048f7-2951-4516-a570-e15d54484af3",
+			"url": "http://localhost:3000/api/v1/temas-educativos/11e2e6a5-9df3-46a1-bb19-b6d05a39ab59",
 			"time": 6,
 			"responseCode": {
 				"code": 200,
@@ -574,7 +574,7 @@
 			]
 		},
 		{
-			"id": "7f34d55a-9e3a-4824-98f3-e22cf76cc83b",
+			"id": "77f9229e-0db5-4768-b12b-a13b1f853b7a",
 			"name": "Update a nonexistent educational topic",
 			"url": "http://localhost:3000/api/v1/temas-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
@@ -607,10 +607,10 @@
 			]
 		},
 		{
-			"id": "941f8932-bd89-43c1-ab19-3bbfbced72b2",
+			"id": "714e13f8-7a74-45da-a129-62bf1a2e967f",
 			"name": "Delete an educational topic",
-			"url": "http://localhost:3000/api/v1/temas-educativos/efc048f7-2951-4516-a570-e15d54484af3",
-			"time": 6,
+			"url": "http://localhost:3000/api/v1/temas-educativos/11e2e6a5-9df3-46a1-bb19-b6d05a39ab59",
+			"time": 4,
 			"responseCode": {
 				"code": 204,
 				"name": "No Content"
@@ -625,7 +625,7 @@
 				}
 			},
 			"times": [
-				6
+				4
 			],
 			"allTests": [
 				{
@@ -634,7 +634,7 @@
 			]
 		},
 		{
-			"id": "5c675f80-3be5-47a0-8954-0c39f7c0f8cb",
+			"id": "f194ebd9-005f-49fe-90c1-5707875be5bf",
 			"name": "Delete nonexistent educational topic",
 			"url": "http://localhost:3000/api/v1/temas-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
@@ -667,10 +667,10 @@
 			]
 		},
 		{
-			"id": "9bfc27b7-fd38-4377-962c-602cfab7667d",
+			"id": "e5b14f25-e49b-4c45-9221-ab87ce625f6e",
 			"name": "Add a Manager",
 			"url": "http://localhost:3000/api/v1/gestores",
-			"time": 6,
+			"time": 3,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -685,7 +685,7 @@
 				}
 			},
 			"times": [
-				6
+				3
 			],
 			"allTests": [
 				{
@@ -694,10 +694,10 @@
 			]
 		},
 		{
-			"id": "b17f277c-5701-466a-81ef-aab5850158c6",
+			"id": "be8d2bbc-be42-496b-96b8-2e96e15a7f55",
 			"name": "Get a Manager",
-			"url": "http://localhost:3000/api/v1/gestores/6d4009d7-4e42-4769-96c0-e4b737c2b2b0",
-			"time": 6,
+			"url": "http://localhost:3000/api/v1/gestores/7af5193c-7c80-445b-a21d-cda0d3e835b3",
+			"time": 4,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -712,7 +712,7 @@
 				}
 			},
 			"times": [
-				6
+				4
 			],
 			"allTests": [
 				{
@@ -721,161 +721,8 @@
 			]
 		},
 		{
-			"id": "9593c714-ae95-43f0-ac5d-f3b2ca4f2663",
+			"id": "85617334-6e65-4463-832d-29cdf7ab5a6d",
 			"name": "Get nonexistent Manager",
-			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 4,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "31154b2a-5cb3-449d-af40-d893860ca902",
-			"name": "Get all Managers",
-			"url": "http://localhost:3000/api/v1/gestores",
-			"time": 5,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Number of managers > 0": true,
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Number of managers > 0": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				5
-			],
-			"allTests": [
-				{
-					"Number of managers > 0": true,
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "37845d57-29c9-4e0a-8333-1d0636cbc0f8",
-			"name": "Update a Manager",
-			"url": "http://localhost:3000/api/v1/gestores/6d4009d7-4e42-4769-96c0-e4b737c2b2b0",
-			"time": 7,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				7
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "c1a36a07-2e35-4173-9a2a-e43b8b8115b1",
-			"name": "Update a nonexistent Manager",
-			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 4,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "19a6236b-00cb-410b-afe3-0bc9cc7b51e8",
-			"name": "Delete a Manager",
-			"url": "http://localhost:3000/api/v1/gestores/6d4009d7-4e42-4769-96c0-e4b737c2b2b0",
-			"time": 6,
-			"responseCode": {
-				"code": 204,
-				"name": "No Content"
-			},
-			"tests": {
-				"Status code is 204": true
-			},
-			"testPassFailCounts": {
-				"Status code is 204": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				6
-			],
-			"allTests": [
-				{
-					"Status code is 204": true
-				}
-			]
-		},
-		{
-			"id": "be6c1f1a-274c-4d58-a2dd-0c44cfc24c11",
-			"name": "Delete nonexistent manager",
 			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
 			"responseCode": {
@@ -907,7 +754,160 @@
 			]
 		},
 		{
-			"id": "ad98c4dd-88e4-4519-95ad-76b760f31084",
+			"id": "db09006e-e262-4244-879a-c76bbb7e678f",
+			"name": "Get all Managers",
+			"url": "http://localhost:3000/api/v1/gestores",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Number of managers > 0": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Number of managers > 0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Number of managers > 0": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "db4aeeaf-66c6-4842-ac48-d0ea83d77023",
+			"name": "Update a Manager",
+			"url": "http://localhost:3000/api/v1/gestores/7af5193c-7c80-445b-a21d-cda0d3e835b3",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "2d7167b9-a761-483f-9f57-a29408d92cdd",
+			"name": "Update a nonexistent Manager",
+			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "5f64101a-b15b-4805-9175-973319fee5dc",
+			"name": "Delete a Manager",
+			"url": "http://localhost:3000/api/v1/gestores/7af5193c-7c80-445b-a21d-cda0d3e835b3",
+			"time": 5,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "7d88cfeb-6357-4f2d-a048-476d62b6804f",
+			"name": "Delete nonexistent manager",
+			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "1a7e91f8-db65-480f-aa06-1084b0c6c38b",
 			"name": "Add a Report",
 			"url": "http://localhost:3000/api/v1/reportes",
 			"time": 5,
@@ -934,9 +934,9 @@
 			]
 		},
 		{
-			"id": "2a8631b9-1a24-470b-8428-f465e2f1b242",
+			"id": "0c9fedc1-7e2a-4608-9955-dd0d6646f1f2",
 			"name": "Get a Report",
-			"url": "http://localhost:3000/api/v1/reportes/de5e04d7-76a3-4059-a5c1-b6cc59954d75",
+			"url": "http://localhost:3000/api/v1/reportes/27b3c7d6-4e6d-4277-b05a-5000b4855357",
 			"time": 4,
 			"responseCode": {
 				"code": 200,
@@ -961,7 +961,7 @@
 			]
 		},
 		{
-			"id": "2d47311f-52d2-4165-97a2-7404768232f2",
+			"id": "464891b9-496b-4850-8665-8ba3a3b5d626",
 			"name": "Get nonexistent Report",
 			"url": "http://localhost:3000/api/v1/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
@@ -994,7 +994,7 @@
 			]
 		},
 		{
-			"id": "f1d269e6-00e2-4bec-a883-a6124f485c62",
+			"id": "c34d2773-4b1d-420c-984f-e21c5b162277",
 			"name": "Get all reports",
 			"url": "http://localhost:3000/api/v1/reportes",
 			"time": 3,
@@ -1027,10 +1027,10 @@
 			]
 		},
 		{
-			"id": "1fb9a2f7-a267-4e9f-9428-50cac2cd599b",
+			"id": "a5bec4ec-0c3d-4af2-b07c-427f451e91e3",
 			"name": "Update a Report",
-			"url": "http://localhost:3000/api/v1/reportes/de5e04d7-76a3-4059-a5c1-b6cc59954d75",
-			"time": 7,
+			"url": "http://localhost:3000/api/v1/reportes/27b3c7d6-4e6d-4277-b05a-5000b4855357",
+			"time": 5,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1045,7 +1045,7 @@
 				}
 			},
 			"times": [
-				7
+				5
 			],
 			"allTests": [
 				{
@@ -1054,7 +1054,7 @@
 			]
 		},
 		{
-			"id": "1c79bfa4-65d8-40a1-b97f-d580d095ada8",
+			"id": "9722a09e-a802-4987-a173-b65842562340",
 			"name": "Update a nonexistent report",
 			"url": "http://localhost:3000/api/v1/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
@@ -1087,10 +1087,10 @@
 			]
 		},
 		{
-			"id": "aab871b1-60cc-44f5-9755-3d5b63f754e9",
+			"id": "8ea400d7-e2d8-41ab-9f54-17f703f4a224",
 			"name": "Delete a report",
-			"url": "http://localhost:3000/api/v1/reportes/de5e04d7-76a3-4059-a5c1-b6cc59954d75",
-			"time": 5,
+			"url": "http://localhost:3000/api/v1/reportes/27b3c7d6-4e6d-4277-b05a-5000b4855357",
+			"time": 4,
 			"responseCode": {
 				"code": 204,
 				"name": "No Content"
@@ -1105,7 +1105,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1114,7 +1114,7 @@
 			]
 		},
 		{
-			"id": "ab0b9f34-56ef-40d3-a387-746d9582f498",
+			"id": "1e398675-4711-4780-b4b4-e2959ec51ba3",
 			"name": "Delete nonexistent report",
 			"url": "http://localhost:3000/api/v1/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
@@ -1147,10 +1147,10 @@
 			]
 		},
 		{
-			"id": "4954d510-c36f-4dd6-8601-7d03bcd79bb0",
+			"id": "a73b4867-7c34-4bc9-8506-7644385b7bb9",
 			"name": "Add a Client",
 			"url": "http://localhost:3000/api/v1/clientes",
-			"time": 3,
+			"time": 4,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -1165,7 +1165,7 @@
 				}
 			},
 			"times": [
-				3
+				4
 			],
 			"allTests": [
 				{
@@ -1174,10 +1174,10 @@
 			]
 		},
 		{
-			"id": "bcb7dd2e-3d9e-42f0-b7e7-91ae6f323112",
+			"id": "d54f07ac-c2ec-4f38-9b27-74ec1c615bf4",
 			"name": "Get all clients",
 			"url": "http://localhost:3000/api/v1/clientes",
-			"time": 3,
+			"time": 4,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1197,7 +1197,7 @@
 				}
 			},
 			"times": [
-				3
+				4
 			],
 			"allTests": [
 				{
@@ -1207,10 +1207,10 @@
 			]
 		},
 		{
-			"id": "5e300e0a-703e-4674-909c-8daf68098f90",
+			"id": "a525a3fb-9667-4a81-9925-6bce4a8dfb58",
 			"name": "Get a client",
-			"url": "http://localhost:3000/api/v1/clientes/ef6846fa-aea5-4bc0-90f0-7f948a92d957",
-			"time": 5,
+			"url": "http://localhost:3000/api/v1/clientes/af2aae36-fe52-4850-a1d1-bd72df86e56c",
+			"time": 4,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1225,7 +1225,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1234,7 +1234,7 @@
 			]
 		},
 		{
-			"id": "1fd09fb5-3b72-4579-a946-2b70d4305b35",
+			"id": "3cdcb2c6-69e5-4e7f-92dd-1fda88a28297",
 			"name": "Get nonexistent client",
 			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
@@ -1267,10 +1267,10 @@
 			]
 		},
 		{
-			"id": "3a225246-03bf-4a6b-8520-f54345ba19af",
+			"id": "93cd846e-e1d2-42ae-bf69-7a8c5ba97391",
 			"name": "Update a client",
-			"url": "http://localhost:3000/api/v1/clientes/ef6846fa-aea5-4bc0-90f0-7f948a92d957",
-			"time": 6,
+			"url": "http://localhost:3000/api/v1/clientes/af2aae36-fe52-4850-a1d1-bd72df86e56c",
+			"time": 4,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1285,7 +1285,7 @@
 				}
 			},
 			"times": [
-				6
+				4
 			],
 			"allTests": [
 				{
@@ -1294,10 +1294,10 @@
 			]
 		},
 		{
-			"id": "30706902-aeb4-44aa-be03-05032b22e394",
+			"id": "3e01983d-93ad-43c9-953c-cf4383ccb6e6",
 			"name": "Delete a client",
-			"url": "http://localhost:3000/api/v1/clientes/ef6846fa-aea5-4bc0-90f0-7f948a92d957",
-			"time": 5,
+			"url": "http://localhost:3000/api/v1/clientes/af2aae36-fe52-4850-a1d1-bd72df86e56c",
+			"time": 4,
 			"responseCode": {
 				"code": 204,
 				"name": "No Content"
@@ -1312,7 +1312,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1321,10 +1321,10 @@
 			]
 		},
 		{
-			"id": "7ea8daaf-ed01-4f4a-adc6-b689ae856aed",
+			"id": "ef00c71f-1c3c-45f9-aa82-1c6686a9bae5",
 			"name": "Update a nonexistent client",
 			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 3,
+			"time": 4,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -1344,7 +1344,7 @@
 				}
 			},
 			"times": [
-				3
+				4
 			],
 			"allTests": [
 				{
@@ -1354,7 +1354,7 @@
 			]
 		},
 		{
-			"id": "2226272a-4b6e-419e-8bc3-1361b4a22521",
+			"id": "3f577d81-e4d4-455b-959a-5d926d8a92fb",
 			"name": "Delete nonexistent client",
 			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 3,
@@ -1387,9 +1387,9 @@
 			]
 		},
 		{
-			"id": "247981b2-3129-49c7-ba33-660a971d1ffd",
-			"name": "Add a Manager Copy",
-			"url": "http://localhost:3000/api/v1/gestores",
+			"id": "4a9c5ddd-0d5a-4ec1-a8ac-e56a2c9923a0",
+			"name": "AddTransfer",
+			"url": "http://localhost:3000/api/v1/transferencias",
 			"time": 4,
 			"responseCode": {
 				"code": 201,
@@ -1414,9 +1414,144 @@
 			]
 		},
 		{
-			"id": "4007e57f-4715-4edd-8030-ed3cd3229728",
-			"name": "Add a Report Copy",
-			"url": "http://localhost:3000/api/v1/reportes",
+			"id": "c0a95955-82a6-49cf-a494-1860f51de57d",
+			"name": "getAllTransfers",
+			"url": "http://localhost:3000/api/v1/transferencias",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "d3e56d3f-97d6-499c-b684-2322b43b2f2a",
+			"name": "getTransfer",
+			"url": "http://localhost:3000/api/v1/transferencias/53717677-b6a0-43ae-919b-914ae3655742",
+			"time": 2,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "a65f0af4-0a31-4ab8-bc5f-d33acf736dd9",
+			"name": "Add an educational resource",
+			"url": "http://localhost:3000/api/v1/recursos-educativos",
+			"time": 4,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "094db697-3300-4e4b-b725-d6e9a0846b8a",
+			"name": "Add an educational resource",
+			"url": "http://localhost:3000/api/v1/recursos-educativos",
+			"time": 4,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "54ed4e81-4dce-42ce-8bc0-f029d3345620",
+			"name": "Add an educational topic",
+			"url": "http://localhost:3000/api/v1/temas-educativos",
+			"time": 4,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "ecb32895-0a0c-4b25-9de8-b2ff872f988e",
+			"name": "addRecursoTema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos/65c4cca2-f376-4b80-ae50-cff9b88711f3",
 			"time": 5,
 			"responseCode": {
 				"code": 201,
@@ -1441,195 +1576,9 @@
 			]
 		},
 		{
-			"id": "91191e81-ebd9-44f1-850b-518dd01f99cc",
-			"name": "addReportGestor",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes/98655f55-592a-49b0-8b24-b320bfae6bfa",
-			"time": 12,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Number of reportes > 0": true
-			},
-			"testPassFailCounts": {
-				"Number of reportes > 0": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				12
-			],
-			"allTests": [
-				{
-					"Number of reportes > 0": true
-				}
-			]
-		},
-		{
-			"id": "8f478da2-08cd-4388-b0b5-7541f7775989",
-			"name": "addReporteUnexistentGestor",
-			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/98655f55-592a-49b0-8b24-b320bfae6bfa",
-			"time": 4,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "75905734-5a02-4293-b91e-8f3f51e7ab7f",
-			"name": "addUnexistentReporteGestor",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 9,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				9
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "286c3f3f-44aa-41af-a653-c345d863a3bf",
-			"name": "getGestorReporte",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes/98655f55-592a-49b0-8b24-b320bfae6bfa",
-			"time": 8,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				8
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "9708b942-69fe-402e-871e-2ff99fd58a8f",
-			"name": "getReporteUnexistentGestor",
-			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/98655f55-592a-49b0-8b24-b320bfae6bfa",
-			"time": 4,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "8c133bee-5125-496b-8b7d-3c44e6f310c3",
-			"name": "getUnexistentReporteReporte",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 4,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "723161eb-2e95-4889-a667-15325f45201e",
-			"name": "getUnassociatedReporManager",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"id": "26aacef3-1696-4be0-ba64-f81c2afce2c8",
+			"name": "addRecursoUnexistentTema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/00000000-0000-0000-0000-000000000000/recursos-educativos/65c4cca2-f376-4b80-ae50-cff9b88711f3",
 			"time": 3,
 			"responseCode": {
 				"code": 404,
@@ -1660,10 +1609,43 @@
 			]
 		},
 		{
-			"id": "2e1aaa36-4f86-4c6e-afd1-b985e70d3e20",
-			"name": "getReportsGestor",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes",
+			"id": "51db9de7-8554-48c9-9075-12c514eca6ae",
+			"name": "addUnexistentRecursoGestor",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos/00000000-0000-0000-0000-000000000000",
 			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "114c67a1-afa2-4aa6-8719-59b2754697c8",
+			"name": "getRecursoTema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos/65c4cca2-f376-4b80-ae50-cff9b88711f3",
+			"time": 3,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1678,7 +1660,7 @@
 				}
 			},
 			"times": [
-				4
+				3
 			],
 			"allTests": [
 				{
@@ -1687,9 +1669,9 @@
 			]
 		},
 		{
-			"id": "73af0d43-8cc8-4ae0-8ded-1bd1847472ad",
-			"name": "getReportesUnexistentGestor",
-			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes",
+			"id": "ae996fe4-caaa-46a5-ad24-8125ae06349c",
+			"name": "getRecurso de tema no existente",
+			"url": "http://localhost:3000/api/v1/temas-educativos/00000000-0000-0000-0000-000000000000/recursos-educativos/65c4cca2-f376-4b80-ae50-cff9b88711f3",
 			"time": 3,
 			"responseCode": {
 				"code": 404,
@@ -1720,37 +1702,10 @@
 			]
 		},
 		{
-			"id": "e6926ddc-5a71-401e-aa90-7cc6e8915fb1",
-			"name": "AsociarReportsGestor",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes",
-			"time": 7,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				7
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "d23d2506-1f4c-4972-9c07-6465096e754f",
-			"name": "AsociarReportesUnexistentGestor",
-			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes",
-			"time": 4,
+			"id": "4ef18e2e-f098-4cd8-ab71-17259ab796ab",
+			"name": "get recurso no existente de tema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos/00000000-0000-0000-0000-000000000000",
+			"time": 3,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -1770,7 +1725,7 @@
 				}
 			},
 			"times": [
-				4
+				3
 			],
 			"allTests": [
 				{
@@ -1780,9 +1735,162 @@
 			]
 		},
 		{
-			"id": "9e7ff3c4-327c-4ae2-a4e4-bbd2a774f9d6",
-			"name": "BorrarReporteGestor",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes/98655f55-592a-49b0-8b24-b320bfae6bfa",
+			"id": "078f83fa-41ef-4634-a85d-16619ee135e0",
+			"name": "get recurso no asociado con tema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos/ab09c6cc-3fec-4c07-88ef-20956c0cdffc",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "0e9e6ac5-9020-48b7-85c1-89ca37f3e47f",
+			"name": "getRecursosTEma",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "11e635ff-9134-4bc2-b0b9-aa4246486474",
+			"name": "getRecursosUnexistentTema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/00000000-0000-0000-0000-000000000000/recursos-educativos/",
+			"time": 2,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "3ac1d37d-a86c-435f-9350-f8aa65233a2f",
+			"name": "AsociarRecursosTema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "aacf583c-164f-4954-9d04-94be16f6911f",
+			"name": "AsociarRecursosUnexistentTopic",
+			"url": "http://localhost:3000/api/v1/temas-educativos/00000000-0000-0000-0000-000000000000/recursos-educativos/",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "91853686-aa9a-4764-ad3c-128305449040",
+			"name": "BorrarRecursoTema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos/65c4cca2-f376-4b80-ae50-cff9b88711f3",
 			"time": 5,
 			"responseCode": {
 				"code": 204,
@@ -1807,9 +1915,9 @@
 			]
 		},
 		{
-			"id": "54504820-b548-45f8-ac23-57ac5a4e295b",
-			"name": "BorrarReporteDeGestorNoexistente",
-			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/98655f55-592a-49b0-8b24-b320bfae6bfa",
+			"id": "0ecb79cf-31b5-4ed6-b17b-6a6e193d5db1",
+			"name": "BorrarRecursoDeTemaNoexistente",
+			"url": "http://localhost:3000/api/v1/temas-educativos/00000000-0000-0000-0000-000000000000/recursos-educativos/65c4cca2-f376-4b80-ae50-cff9b88711f3",
 			"time": 3,
 			"responseCode": {
 				"code": 404,
@@ -1840,10 +1948,10 @@
 			]
 		},
 		{
-			"id": "7a10947a-af88-4198-bcf7-512c4cc05506",
-			"name": "BorrarReporteNoexistenteDeGestor",
-			"url": "http://localhost:3000/api/v1/gestores/e1574230-c9b2-47a4-94fc-0c65cd113868/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 6,
+			"id": "3bd2723a-7f53-4a37-b92a-84037f3a6c35",
+			"name": "BorrarRecursoNoexistenteDeTema",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0/recursos-educativos/00000000-0000-0000-0000-000000000000",
+			"time": 4,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -1863,7 +1971,7 @@
 				}
 			},
 			"times": [
-				6
+				4
 			],
 			"allTests": [
 				{
@@ -1873,8 +1981,362 @@
 			]
 		},
 		{
-			"id": "e95b9c4c-bcec-40c5-bf49-4554edf3013f",
+			"id": "08bce8c5-01bf-46d8-abee-4203d6446340",
+			"name": "Get an EducationalResource Copy",
+			"url": "http://localhost:3000/api/v1/recursos-educativos/65c4cca2-f376-4b80-ae50-cff9b88711f3",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "07ca84e4-f555-4913-a620-781f7ae4c6f7",
+			"name": "Get an EducationalTopic Copy",
+			"url": "http://localhost:3000/api/v1/temas-educativos/99f4834c-fed4-4aa4-8991-0e78804802f0",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "22f622ca-1f39-41c1-a0b4-fabbef7ef5ff",
 			"name": "Add a Client Copy",
+			"url": "http://localhost:3000/api/v1/clientes",
+			"time": 3,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "6e778eb3-8b08-4046-88b6-807886e159c4",
+			"name": "addTransferenciaCliente",
+			"url": "http://localhost:3000/api/v1/clientes/d083053a-c1fd-4cac-a363-da741aaab036/transferencias",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "c16cc09f-20ef-49ca-9c9d-484368fb3d22",
+			"name": "addTransferenciaUnexistentCliente",
+			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/transferencias",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "c6511599-7c24-45e4-a67d-bbb727805fc5",
+			"name": "getTransferenciaCliente",
+			"url": "http://localhost:3000/api/v1/clientes/d083053a-c1fd-4cac-a363-da741aaab036/transferencias/89c7e8ab-a5ef-4688-a0a6-f10e7401c31a",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "a8733d8c-efa0-438e-93b0-627b6d8cc697",
+			"name": "getTransferenciaClienteUnexistent",
+			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/transferencias/89c7e8ab-a5ef-4688-a0a6-f10e7401c31a",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "9b081c66-9416-4b5b-87aa-4a9682980c51",
+			"name": "getUnexistentTransferenciaCliente",
+			"url": "http://localhost:3000/api/v1/clientes/d083053a-c1fd-4cac-a363-da741aaab036/transferencias/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "81804544-4e99-404e-9bb9-b76c3300e638",
+			"name": "getUnassociatedTransferenciaCliente",
+			"url": "http://localhost:3000/api/v1/clientes/d083053a-c1fd-4cac-a363-da741aaab036/transferencias/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "0d3880f4-1406-44d0-a4ad-f072517c77b3",
+			"name": "getTransferenciasCliente",
+			"url": "http://localhost:3000/api/v1/clientes/d083053a-c1fd-4cac-a363-da741aaab036/transferencias",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "6eddb36a-0f0e-489d-8c87-85d9e74c23a1",
+			"name": "getTransferenciasUnexistentClient",
+			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/transferencias/",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "2d0e9fe4-9283-4db8-b751-184a14fce5a9",
+			"name": "Add a Report Copy 2",
+			"url": "http://localhost:3000/api/v1/reportes",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "ae977bd1-13e6-4ff2-97ab-19e5e98c8186",
+			"name": "Add a Client Copy 2",
 			"url": "http://localhost:3000/api/v1/clientes",
 			"time": 4,
 			"responseCode": {
@@ -1900,37 +2362,10 @@
 			]
 		},
 		{
-			"id": "8b52dda4-029b-45a2-91b5-0d412945baa0",
-			"name": "Add a Report Copy",
-			"url": "http://localhost:3000/api/v1/reportes",
-			"time": 4,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Status code is 201": true
-			},
-			"testPassFailCounts": {
-				"Status code is 201": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 201": true
-				}
-			]
-		},
-		{
-			"id": "02fe199a-801e-4e63-ab93-ab17192af462",
+			"id": "af8b0464-9034-40a7-8fff-7265e10f91cc",
 			"name": "addReportCliente",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes/4c26751a-7bfd-42ba-83d0-93297823eb27",
-			"time": 7,
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes/985ed1d7-562d-4074-8090-079e76a6b338",
+			"time": 5,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -1945,7 +2380,7 @@
 				}
 			},
 			"times": [
-				7
+				5
 			],
 			"allTests": [
 				{
@@ -1954,10 +2389,10 @@
 			]
 		},
 		{
-			"id": "204b06d7-0cf5-498d-949e-7d86d2480388",
+			"id": "c11cf64b-8481-46b8-b41c-f945d3e622df",
 			"name": "addReporteUnexistentCliente",
-			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/4c26751a-7bfd-42ba-83d0-93297823eb27",
-			"time": 3,
+			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/985ed1d7-562d-4074-8090-079e76a6b338",
+			"time": 4,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -1977,7 +2412,7 @@
 				}
 			},
 			"times": [
-				3
+				4
 			],
 			"allTests": [
 				{
@@ -1987,9 +2422,9 @@
 			]
 		},
 		{
-			"id": "947e2484-bff0-4567-9de6-989f953c26bb",
+			"id": "094e40fb-4745-418c-9dbe-6e093b245127",
 			"name": "addUnexistentReporteCliente",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
 			"time": 4,
 			"responseCode": {
 				"code": 404,
@@ -2020,10 +2455,10 @@
 			]
 		},
 		{
-			"id": "e6b7ac6e-06e4-451b-86ef-2e187f57d996",
+			"id": "0a8031b2-ac59-4174-bf7a-b4bf120f833b",
 			"name": "getReporteCliente",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes/4c26751a-7bfd-42ba-83d0-93297823eb27",
-			"time": 8,
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes/985ed1d7-562d-4074-8090-079e76a6b338",
+			"time": 4,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -2038,7 +2473,7 @@
 				}
 			},
 			"times": [
-				8
+				4
 			],
 			"allTests": [
 				{
@@ -2047,9 +2482,9 @@
 			]
 		},
 		{
-			"id": "05b27c62-aa8d-425b-ace2-89c617673caf",
+			"id": "082f254b-39f9-4903-899f-2ba40b8653f0",
 			"name": "getReporteClienteUnexistent",
-			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/4c26751a-7bfd-42ba-83d0-93297823eb27",
+			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/985ed1d7-562d-4074-8090-079e76a6b338",
 			"time": 3,
 			"responseCode": {
 				"code": 404,
@@ -2080,10 +2515,10 @@
 			]
 		},
 		{
-			"id": "5bc30c33-737f-431c-a7ad-e59f0ae85282",
+			"id": "373a11d5-8b7e-44ca-a67b-dd658d93f2c3",
 			"name": "getUnexistentReporteCliente",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 4,
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 3,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -2103,7 +2538,7 @@
 				}
 			},
 			"times": [
-				4
+				3
 			],
 			"allTests": [
 				{
@@ -2113,10 +2548,10 @@
 			]
 		},
 		{
-			"id": "7f339114-06b9-432d-b953-f296e8835140",
+			"id": "520e2411-5826-4996-8565-c25796449fb8",
 			"name": "getUnassociatedReportCliente",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 4,
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 3,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -2136,7 +2571,7 @@
 				}
 			},
 			"times": [
-				4
+				3
 			],
 			"allTests": [
 				{
@@ -2146,9 +2581,9 @@
 			]
 		},
 		{
-			"id": "2a25501c-3883-43ea-b768-27ffd68ff4e2",
+			"id": "ea05eb85-2369-4f2c-89a1-32c9757acca5",
 			"name": "getReportsCliente",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes",
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes",
 			"time": 4,
 			"responseCode": {
 				"code": 200,
@@ -2173,7 +2608,7 @@
 			]
 		},
 		{
-			"id": "64002967-e379-47f2-afa6-4abb7aa1b284",
+			"id": "b79c9fe9-0e4b-4620-842a-c359918516e9",
 			"name": "getReportesUnexistentClient",
 			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes",
 			"time": 3,
@@ -2206,34 +2641,34 @@
 			]
 		},
 		{
-			"id": "8c9ec13f-876c-427c-b339-1391fef767e8",
+			"id": "76aa06c0-6714-4e2c-8d38-dc43f5410ae4",
 			"name": "AsociarReportsClient",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes",
-			"time": 10,
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes",
+			"time": 4,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
 			},
 			"tests": {
-				"Status code is 200": true
+				"Status code is 201": true
 			},
 			"testPassFailCounts": {
-				"Status code is 200": {
+				"Status code is 201": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				10
+				4
 			],
 			"allTests": [
 				{
-					"Status code is 200": true
+					"Status code is 201": true
 				}
 			]
 		},
 		{
-			"id": "b775c715-09a6-434b-bf5e-8c660f9130f2",
+			"id": "21fc0f98-2538-48ef-885b-f4a62201903d",
 			"name": "AsociarReportesUnexistentCliente",
 			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes",
 			"time": 3,
@@ -2266,9 +2701,9 @@
 			]
 		},
 		{
-			"id": "2e4e0344-ad95-4c88-ad2b-c4c9c97c5ff9",
+			"id": "7d28cdf0-7f74-49d0-b0a4-a8e906029eec",
 			"name": "BorrarReporteCliente",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes/4c26751a-7bfd-42ba-83d0-93297823eb27",
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes/985ed1d7-562d-4074-8090-079e76a6b338",
 			"time": 6,
 			"responseCode": {
 				"code": 204,
@@ -2293,24 +2728,19 @@
 			]
 		},
 		{
-			"id": "3476b55f-b743-4af1-869b-91d24fe8378f",
+			"id": "995e6eae-a6bc-4e69-8164-f0fc6fe118a9",
 			"name": "BorrarReporteDeClienteNoexistente",
-			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/4c26751a-7bfd-42ba-83d0-93297823eb27",
+			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/985ed1d7-562d-4074-8090-079e76a6b338",
 			"time": 3,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
 			},
 			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
+				"Status code is 204": true
 			},
 			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
+				"Status code is 204": {
 					"pass": 1,
 					"fail": 0
 				}
@@ -2320,16 +2750,15 @@
 			],
 			"allTests": [
 				{
-					"Status code is 404": true,
-					"Get expected error message": true
+					"Status code is 204": true
 				}
 			]
 		},
 		{
-			"id": "419341ca-7c52-472b-aa1e-61ea5acdf9dc",
+			"id": "879a5492-9068-4106-8693-a733d9f7ef1c",
 			"name": "BorrarReporteNoexistenteDeCliente",
-			"url": "http://localhost:3000/api/v1/clientes/4c040cd6-7965-4132-b474-37671b8540a2/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 5,
+			"url": "http://localhost:3000/api/v1/clientes/62f48b42-b35f-4c04-9000-6662c3ddd267/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 4,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -2344,6 +2773,88 @@
 					"fail": 0
 				},
 				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "3d24af05-c9af-4bd8-b55b-5ff88152a94e",
+			"name": "Add a Manager Copy",
+			"url": "http://localhost:3000/api/v1/gestores",
+			"time": 4,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "4f3f24e5-1176-4fdc-a3b0-fe4608ec8cb2",
+			"name": "Add a Report Copy",
+			"url": "http://localhost:3000/api/v1/reportes",
+			"time": 4,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "e6618b01-c782-4084-a5a8-736c7c3c1211",
+			"name": "addReportGestor",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes/40d6cef5-7ccd-44a7-8129-14b3989b02cc",
+			"time": 5,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
 					"pass": 1,
 					"fail": 0
 				}
@@ -2353,19 +2864,270 @@
 			],
 			"allTests": [
 				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "a86347aa-cc24-41f2-8b5b-c1e642161e05",
+			"name": "addReporteUnexistentGestor",
+			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/40d6cef5-7ccd-44a7-8129-14b3989b02cc",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
 					"Status code is 404": true,
 					"Get expected error message": true
 				}
 			]
 		},
 		{
-			"id": "04e78d12-d896-4722-9b7d-9e646f3e1a87",
-			"name": "Add a Client Copy",
-			"url": "http://localhost:3000/api/v1/clientes",
-			"time": 5,
+			"id": "42e35350-2c16-4b88-aaa7-b5469f423c8d",
+			"name": "addUnexistentReporteGestor",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 4,
 			"responseCode": {
-				"code": 201,
-				"name": "Created"
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "2e6fbc79-417b-4952-bfe3-09dc08488b1b",
+			"name": "getGestorReporte",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes/40d6cef5-7ccd-44a7-8129-14b3989b02cc",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "7c311a71-241a-4947-b7a7-5d51d04373b6",
+			"name": "getReporteGestorUnexistent",
+			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/40d6cef5-7ccd-44a7-8129-14b3989b02cc",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "228b7b6c-e711-474a-a4c8-c88f16c27e77",
+			"name": "getUnexistentReporteGestor",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "124ebe09-4e36-4653-92d8-3f4d51373ab0",
+			"name": "getUnassociatedReporManager",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "c46e72f6-6322-45d1-8c81-d892e8728449",
+			"name": "getReportsGestor",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "c2b98921-ae5d-4221-a498-c2644191a468",
+			"name": "getReportesUnexistentGestor",
+			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Get expected error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get expected error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Get expected error message": true
+				}
+			]
+		},
+		{
+			"id": "2d3067b2-0071-47ec-85f9-04586ad3b81b",
+			"name": "AsociarReportsGestor",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
 				"Status code is 201": true
@@ -2377,7 +3139,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -2386,36 +3148,9 @@
 			]
 		},
 		{
-			"id": "b9fd638e-96c3-479d-87f0-d3a80b838dc9",
-			"name": "addTransferenciaCliente",
-			"url": "http://localhost:3000/api/v1/clientes/d1dd8f20-b3ad-4754-b4ea-4dc27dbdd914/transferencias",
-			"time": 11,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Number of transferencias > 0": true
-			},
-			"testPassFailCounts": {
-				"Number of transferencias > 0": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				11
-			],
-			"allTests": [
-				{
-					"Number of transferencias > 0": true
-				}
-			]
-		},
-		{
-			"id": "6398b9c2-06b1-4c1f-a2b8-e91d4f0e6143",
-			"name": "addTransferenciaUnexistentCliente",
-			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/transferencias",
+			"id": "80bb92d9-dbe4-4303-9ba0-0a93c0f8a3c4",
+			"name": "AsociarReportesUnexistentGestor Copy",
+			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes",
 			"time": 4,
 			"responseCode": {
 				"code": 404,
@@ -2446,522 +3181,9 @@
 			]
 		},
 		{
-			"id": "fcfcf4ea-9fee-464c-9e66-9c67bc31c199",
-			"name": "getTransferenciaCliente",
-			"url": "http://localhost:3000/api/v1/clientes/d1dd8f20-b3ad-4754-b4ea-4dc27dbdd914/transferencias/6501bd2e-8195-4c31-bf15-58a5f0476c98",
-			"time": 4,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "757eb6bd-d4ed-40ea-94e2-9694e8471d5d",
-			"name": "getTransferenciaClienteUnexistent",
-			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/transferencias/bffe827f-8d61-46cd-bde3-b4c7c3e8de9b",
-			"time": 3,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				3
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "98821eb7-f260-48ab-9e3d-605459af54ed",
-			"name": "getUnexistentTransferenciaCliente",
-			"url": "http://localhost:3000/api/v1/clientes/d1dd8f20-b3ad-4754-b4ea-4dc27dbdd914/transferencias/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 3,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				3
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "8f6664f3-2f8c-4ebd-8cc3-691688beae64",
-			"name": "getUnassociatedTransferenciaCliente",
-			"url": "http://localhost:3000/api/v1/clientes/d1dd8f20-b3ad-4754-b4ea-4dc27dbdd914/transferencias/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 4,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "75a3ead0-2a14-47f9-acc2-faffa530c998",
-			"name": "getTransferenciasCliente",
-			"url": "http://localhost:3000/api/v1/clientes/d1dd8f20-b3ad-4754-b4ea-4dc27dbdd914/transferencias",
-			"time": 4,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "1005b6b0-1a56-4335-8f74-ba6ec9cfbeec",
-			"name": "getTransferenciasUnexistentClient",
-			"url": "http://localhost:3000/api/v1/clientes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/transferencias/",
-			"time": 3,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				3
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "2a77db27-3bda-4ebe-9ae0-afa24d34d374",
-			"name": "Add an educational topic Copy",
-			"url": "http://localhost:3000/api/v1/temas-educativos",
-			"time": 7,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Status code is 201": true
-			},
-			"testPassFailCounts": {
-				"Status code is 201": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				7
-			],
-			"allTests": [
-				{
-					"Status code is 201": true
-				}
-			]
-		},
-		{
-			"id": "ff487b47-3c1f-4f67-9d3c-622871306ec2",
-			"name": "Add an educational resource Copy",
-			"url": "http://localhost:3000/api/v1/recursos-educativos",
-			"time": 10,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Status code is 201": true
-			},
-			"testPassFailCounts": {
-				"Status code is 201": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				10
-			],
-			"allTests": [
-				{
-					"Status code is 201": true
-				}
-			]
-		},
-		{
-			"id": "174bb3c6-9ee0-408b-87ab-3e66bfb830dd",
-			"name": "AddTemaEducativoRecursoEducativo",
-			"url": "http://localhost:3000/api/v1/temas-educativos/87fd398e-70d7-44cc-850a-830f84ad36c2/recursos-educativos/033b4fac-d2c9-4f83-b084-1ca2a6d316dc",
-			"time": 13,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Status code is 201": true
-			},
-			"testPassFailCounts": {
-				"Status code is 201": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				13
-			],
-			"allTests": [
-				{
-					"Status code is 201": true
-				}
-			]
-		},
-		{
-			"id": "a3678fb4-cdb0-4c9c-a534-018f29c33727",
-			"name": "getRecursoTema",
-			"url": "http://localhost:3000/api/v1/temas-educativos/87fd398e-70d7-44cc-850a-830f84ad36c2/recursos-educativos/033b4fac-d2c9-4f83-b084-1ca2a6d316dc",
-			"time": 6,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				6
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "ca59bf10-79c8-4536-8eb2-f53822c986c1",
-			"name": "getRecursoTemaUnexistent",
-			"url": "http://localhost:3000/api/v1/temas-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/recursos-educativos/033b4fac-d2c9-4f83-b084-1ca2a6d316dc",
-			"time": 4,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "bc54ac09-51d1-4321-9675-29d1848a4bcf",
-			"name": "getUnexistentRecursoTema",
-			"url": "http://localhost:3000/api/v1/temas-educativos/87fd398e-70d7-44cc-850a-830f84ad36c2/recursos-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 4,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "10a7b8d2-d263-42d6-934c-d566756565a3",
-			"name": "getUnassociatedRecursoTema",
-			"url": "http://localhost:3000/api/v1/temas-educativos/87fd398e-70d7-44cc-850a-830f84ad36c2/recursos-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 25,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				25
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "d6d38c96-077d-4f00-bded-eb15d3324465",
-			"name": "getRecursosTema",
-			"url": "http://localhost:3000/api/v1/temas-educativos/87fd398e-70d7-44cc-850a-830f84ad36c2/recursos-educativos",
-			"time": 5,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				5
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "ee20e597-5809-4b68-ab01-12f38bc5ab25",
-			"name": "getRecursosUnexistentTema",
-			"url": "http://localhost:3000/api/v1/temas-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/recursos-educativos",
-			"time": 3,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				3
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "bcfd3fae-7d61-4c73-af9e-423972c97a3a",
-			"name": "AsociarRecursosTema",
-			"url": "http://localhost:3000/api/v1/temas-educativos/87fd398e-70d7-44cc-850a-830f84ad36c2/recursos-educativos",
-			"time": 9,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				9
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "34eb4cc0-9e02-4cbb-8b20-976893037eab",
-			"name": "AsociarRecursosUnexistentTopic",
-			"url": "http://localhost:3000/api/v1/temas-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/recursos-educativos",
-			"time": 3,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true,
-				"Get expected error message": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				3
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "610cb628-6c07-4aa3-9903-0900ef930276",
-			"name": "BorrarRecursoTema",
-			"url": "http://localhost:3000/api/v1/temas-educativos/87fd398e-70d7-44cc-850a-830f84ad36c2/recursos-educativos/033b4fac-d2c9-4f83-b084-1ca2a6d316dc",
+			"id": "5779680a-09c0-4a24-9ade-ecbda5559430",
+			"name": "BorrarReporteGestor",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes/40d6cef5-7ccd-44a7-8129-14b3989b02cc",
 			"time": 5,
 			"responseCode": {
 				"code": 204,
@@ -2986,9 +3208,9 @@
 			]
 		},
 		{
-			"id": "c187dacd-d4cd-4016-911a-a8f6e3a822ea",
-			"name": "BorrarRecursoDeTemaNoexistente",
-			"url": "http://localhost:3000/api/v1/temas-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/recursos-educativos/033b4fac-d2c9-4f83-b084-1ca2a6d316dc",
+			"id": "f0b88ad9-f639-4cb8-8c02-feb3c0df2d2a",
+			"name": "BorrarReporteDeGestorNoexistente",
+			"url": "http://localhost:3000/api/v1/gestores/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF/reportes/40d6cef5-7ccd-44a7-8129-14b3989b02cc",
 			"time": 3,
 			"responseCode": {
 				"code": 404,
@@ -3019,10 +3241,10 @@
 			]
 		},
 		{
-			"id": "bac512ea-9beb-43a0-9476-3722b121cf73",
-			"name": "BorrarRecursoNoexistenteDeTema",
-			"url": "http://localhost:3000/api/v1/temas-educativos/87fd398e-70d7-44cc-850a-830f84ad36c2/recursos-educativos/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
-			"time": 5,
+			"id": "bd870883-b78b-43cb-be58-80448cf6d3e5",
+			"name": "BorrarReporteNoexistenteDeGestor",
+			"url": "http://localhost:3000/api/v1/gestores/eb83eecb-3bf5-47b8-8028-f4f4ef1d5bad/reportes/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+			"time": 4,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -3037,34 +3259,6 @@
 					"fail": 0
 				},
 				"Get expected error message": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				5
-			],
-			"allTests": [
-				{
-					"Status code is 404": true,
-					"Get expected error message": true
-				}
-			]
-		},
-		{
-			"id": "ab658dc9-9b57-485d-af65-d0238cac53cc",
-			"name": "AddTransfer",
-			"url": "http://localhost:3000/api/v1/transferencias",
-			"time": 4,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Status code is 201": true
-			},
-			"testPassFailCounts": {
-				"Status code is 201": {
 					"pass": 1,
 					"fail": 0
 				}
@@ -3074,484 +3268,451 @@
 			],
 			"allTests": [
 				{
-					"Status code is 201": true
-				}
-			]
-		},
-		{
-			"id": "05f14b32-a9b2-46b2-9ebb-79685bf90c38",
-			"name": "getAllTransfers",
-			"url": "http://localhost:3000/api/v1/transferencias",
-			"time": 3,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				3
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "6152fb36-9bd8-4390-8cd4-b96b577fdbaa",
-			"name": "getTransfer",
-			"url": "http://localhost:3000/api/v1/transferencias/2bba9f7d-4087-4870-a55d-9155e115d22a",
-			"time": 3,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				3
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
+					"Status code is 404": true,
+					"Get expected error message": true
 				}
 			]
 		}
 	],
 	"count": 1,
-	"totalTime": 624,
+	"totalTime": 430,
 	"collection": {
 		"requests": [
 			{
-				"id": "7125b3f0-bfad-428d-8e23-d80737952c52",
+				"id": "f84f67f4-c432-4c92-9bda-2822b183722f",
 				"method": "POST"
 			},
 			{
-				"id": "a9046a1e-3c9e-4c1b-8216-7209d5c5f8e3",
+				"id": "7708f2e5-ca38-473a-b2c9-b23932961741",
 				"method": "POST"
 			},
 			{
-				"id": "399169be-cc62-4e7b-816e-a59b6ff50a63",
+				"id": "bc5b51bb-4288-45d9-a0e1-59ecb71f3ede",
 				"method": "POST"
 			},
 			{
-				"id": "b91ff09a-f082-4fef-b205-c38692c5d9f6",
+				"id": "36f0878f-aa09-4791-be51-d64b4a9f29c0",
 				"method": "POST"
 			},
 			{
-				"id": "1f68dee1-a778-4490-a740-b6a0f5fa3352",
+				"id": "a116f17f-bace-437c-bed2-3d5e31704dd4",
 				"method": "POST"
 			},
 			{
-				"id": "f3c1442b-2cfa-480f-9dba-b41fe57c2dc1",
+				"id": "a62bef38-3d31-47d4-958a-37692b64c511",
 				"method": "POST"
 			},
 			{
-				"id": "f73fdee9-08a5-4fb8-8917-ac9accd15213",
+				"id": "d9fc9041-2017-4cc0-9870-6d7be28c50c7",
 				"method": "POST"
 			},
 			{
-				"id": "2f0b5706-e550-4fee-8bdb-2c220287c041",
+				"id": "bb90453c-f8d9-4b17-bae7-2173d7533ce5",
 				"method": "GET"
 			},
 			{
-				"id": "bd49dd71-c528-4b07-a399-22a44e2b847b",
+				"id": "ecb95802-24e1-4d22-8413-295d477a9cd4",
 				"method": "GET"
 			},
 			{
-				"id": "ab973428-bdcd-4b43-9aa0-cb0e8711d5bb",
+				"id": "9bdf3c5a-3808-4b41-9ce3-e65a5c59dca6",
 				"method": "GET"
 			},
 			{
-				"id": "c8fbf5c9-8a37-47cb-86de-7131fa77bd6b",
+				"id": "7bb2d980-43cb-4b90-8206-8c7a520bc93d",
 				"method": "PUT"
 			},
 			{
-				"id": "1bf52de7-b226-4277-8a52-c0a959a28ede",
+				"id": "e2df347c-0939-45c7-8150-a4813dea5834",
 				"method": "PUT"
 			},
 			{
-				"id": "15b475ad-cb6b-4546-9953-fabffb713793",
+				"id": "d60409e9-d04a-43cc-be8a-478982bd9de4",
 				"method": "DELETE"
 			},
 			{
-				"id": "0a236312-9209-4ab7-825b-2e7473b16ea4",
+				"id": "f6146417-5130-4bc6-b6ad-9432757e2731",
 				"method": "DELETE"
 			},
 			{
-				"id": "76162702-3fb8-4f2b-8483-0a7a6c52fa5e",
+				"id": "76cea4d0-d4d9-45f0-8111-770c4144dd2b",
 				"method": "POST"
 			},
 			{
-				"id": "f7db5c95-802a-4d1d-9f47-52f19bf7dbfe",
+				"id": "8fc41482-4398-4074-9a13-d951f459c06a",
 				"method": "GET"
 			},
 			{
-				"id": "13542136-d3e8-47e6-b56d-316dcc049940",
+				"id": "421f66e1-b41a-403e-a3c8-35a095f442d0",
 				"method": "GET"
 			},
 			{
-				"id": "795bd662-431e-4053-9eae-c0d6e81557f1",
+				"id": "9781d103-14a8-4f80-8ccc-17fd0585465b",
 				"method": "GET"
 			},
 			{
-				"id": "0162fe7b-5cf0-4d3f-ae44-1a3b74bcd2e6",
+				"id": "47a9b468-ddd2-498b-aaaf-8b0ca90ead9c",
 				"method": "PUT"
 			},
 			{
-				"id": "7f34d55a-9e3a-4824-98f3-e22cf76cc83b",
+				"id": "77f9229e-0db5-4768-b12b-a13b1f853b7a",
 				"method": "PUT"
 			},
 			{
-				"id": "941f8932-bd89-43c1-ab19-3bbfbced72b2",
+				"id": "714e13f8-7a74-45da-a129-62bf1a2e967f",
 				"method": "DELETE"
 			},
 			{
-				"id": "5c675f80-3be5-47a0-8954-0c39f7c0f8cb",
+				"id": "f194ebd9-005f-49fe-90c1-5707875be5bf",
 				"method": "DELETE"
 			},
 			{
-				"id": "9bfc27b7-fd38-4377-962c-602cfab7667d",
+				"id": "e5b14f25-e49b-4c45-9221-ab87ce625f6e",
 				"method": "POST"
 			},
 			{
-				"id": "b17f277c-5701-466a-81ef-aab5850158c6",
+				"id": "be8d2bbc-be42-496b-96b8-2e96e15a7f55",
 				"method": "GET"
 			},
 			{
-				"id": "9593c714-ae95-43f0-ac5d-f3b2ca4f2663",
+				"id": "85617334-6e65-4463-832d-29cdf7ab5a6d",
 				"method": "GET"
 			},
 			{
-				"id": "31154b2a-5cb3-449d-af40-d893860ca902",
+				"id": "db09006e-e262-4244-879a-c76bbb7e678f",
 				"method": "GET"
 			},
 			{
-				"id": "37845d57-29c9-4e0a-8333-1d0636cbc0f8",
+				"id": "db4aeeaf-66c6-4842-ac48-d0ea83d77023",
 				"method": "PUT"
 			},
 			{
-				"id": "c1a36a07-2e35-4173-9a2a-e43b8b8115b1",
+				"id": "2d7167b9-a761-483f-9f57-a29408d92cdd",
 				"method": "PUT"
 			},
 			{
-				"id": "19a6236b-00cb-410b-afe3-0bc9cc7b51e8",
+				"id": "5f64101a-b15b-4805-9175-973319fee5dc",
 				"method": "DELETE"
 			},
 			{
-				"id": "be6c1f1a-274c-4d58-a2dd-0c44cfc24c11",
+				"id": "7d88cfeb-6357-4f2d-a048-476d62b6804f",
 				"method": "DELETE"
 			},
 			{
-				"id": "ad98c4dd-88e4-4519-95ad-76b760f31084",
+				"id": "1a7e91f8-db65-480f-aa06-1084b0c6c38b",
 				"method": "POST"
 			},
 			{
-				"id": "2a8631b9-1a24-470b-8428-f465e2f1b242",
+				"id": "0c9fedc1-7e2a-4608-9955-dd0d6646f1f2",
 				"method": "GET"
 			},
 			{
-				"id": "2d47311f-52d2-4165-97a2-7404768232f2",
+				"id": "464891b9-496b-4850-8665-8ba3a3b5d626",
 				"method": "GET"
 			},
 			{
-				"id": "f1d269e6-00e2-4bec-a883-a6124f485c62",
+				"id": "c34d2773-4b1d-420c-984f-e21c5b162277",
 				"method": "GET"
 			},
 			{
-				"id": "1fb9a2f7-a267-4e9f-9428-50cac2cd599b",
+				"id": "a5bec4ec-0c3d-4af2-b07c-427f451e91e3",
 				"method": "PUT"
 			},
 			{
-				"id": "1c79bfa4-65d8-40a1-b97f-d580d095ada8",
+				"id": "9722a09e-a802-4987-a173-b65842562340",
 				"method": "PUT"
 			},
 			{
-				"id": "aab871b1-60cc-44f5-9755-3d5b63f754e9",
+				"id": "8ea400d7-e2d8-41ab-9f54-17f703f4a224",
 				"method": "DELETE"
 			},
 			{
-				"id": "ab0b9f34-56ef-40d3-a387-746d9582f498",
+				"id": "1e398675-4711-4780-b4b4-e2959ec51ba3",
 				"method": "DELETE"
 			},
 			{
-				"id": "4954d510-c36f-4dd6-8601-7d03bcd79bb0",
+				"id": "a73b4867-7c34-4bc9-8506-7644385b7bb9",
 				"method": "POST"
 			},
 			{
-				"id": "bcb7dd2e-3d9e-42f0-b7e7-91ae6f323112",
+				"id": "d54f07ac-c2ec-4f38-9b27-74ec1c615bf4",
 				"method": "GET"
 			},
 			{
-				"id": "5e300e0a-703e-4674-909c-8daf68098f90",
+				"id": "a525a3fb-9667-4a81-9925-6bce4a8dfb58",
 				"method": "GET"
 			},
 			{
-				"id": "1fd09fb5-3b72-4579-a946-2b70d4305b35",
+				"id": "3cdcb2c6-69e5-4e7f-92dd-1fda88a28297",
 				"method": "GET"
 			},
 			{
-				"id": "3a225246-03bf-4a6b-8520-f54345ba19af",
+				"id": "93cd846e-e1d2-42ae-bf69-7a8c5ba97391",
 				"method": "PUT"
 			},
 			{
-				"id": "30706902-aeb4-44aa-be03-05032b22e394",
+				"id": "3e01983d-93ad-43c9-953c-cf4383ccb6e6",
 				"method": "DELETE"
 			},
 			{
-				"id": "7ea8daaf-ed01-4f4a-adc6-b689ae856aed",
+				"id": "ef00c71f-1c3c-45f9-aa82-1c6686a9bae5",
 				"method": "PUT"
 			},
 			{
-				"id": "2226272a-4b6e-419e-8bc3-1361b4a22521",
+				"id": "3f577d81-e4d4-455b-959a-5d926d8a92fb",
 				"method": "DELETE"
 			},
 			{
-				"id": "247981b2-3129-49c7-ba33-660a971d1ffd",
+				"id": "4a9c5ddd-0d5a-4ec1-a8ac-e56a2c9923a0",
 				"method": "POST"
 			},
 			{
-				"id": "4007e57f-4715-4edd-8030-ed3cd3229728",
+				"id": "c0a95955-82a6-49cf-a494-1860f51de57d",
+				"method": "GET"
+			},
+			{
+				"id": "d3e56d3f-97d6-499c-b684-2322b43b2f2a",
+				"method": "GET"
+			},
+			{
+				"id": "a65f0af4-0a31-4ab8-bc5f-d33acf736dd9",
 				"method": "POST"
 			},
 			{
-				"id": "91191e81-ebd9-44f1-850b-518dd01f99cc",
+				"id": "094db697-3300-4e4b-b725-d6e9a0846b8a",
 				"method": "POST"
 			},
 			{
-				"id": "8f478da2-08cd-4388-b0b5-7541f7775989",
+				"id": "54ed4e81-4dce-42ce-8bc0-f029d3345620",
 				"method": "POST"
 			},
 			{
-				"id": "75905734-5a02-4293-b91e-8f3f51e7ab7f",
+				"id": "ecb32895-0a0c-4b25-9de8-b2ff872f988e",
 				"method": "POST"
 			},
 			{
-				"id": "286c3f3f-44aa-41af-a653-c345d863a3bf",
+				"id": "26aacef3-1696-4be0-ba64-f81c2afce2c8",
+				"method": "POST"
+			},
+			{
+				"id": "51db9de7-8554-48c9-9075-12c514eca6ae",
+				"method": "POST"
+			},
+			{
+				"id": "114c67a1-afa2-4aa6-8719-59b2754697c8",
 				"method": "GET"
 			},
 			{
-				"id": "9708b942-69fe-402e-871e-2ff99fd58a8f",
+				"id": "ae996fe4-caaa-46a5-ad24-8125ae06349c",
 				"method": "GET"
 			},
 			{
-				"id": "8c133bee-5125-496b-8b7d-3c44e6f310c3",
+				"id": "4ef18e2e-f098-4cd8-ab71-17259ab796ab",
 				"method": "GET"
 			},
 			{
-				"id": "723161eb-2e95-4889-a667-15325f45201e",
+				"id": "078f83fa-41ef-4634-a85d-16619ee135e0",
 				"method": "GET"
 			},
 			{
-				"id": "2e1aaa36-4f86-4c6e-afd1-b985e70d3e20",
+				"id": "0e9e6ac5-9020-48b7-85c1-89ca37f3e47f",
 				"method": "GET"
 			},
 			{
-				"id": "73af0d43-8cc8-4ae0-8ded-1bd1847472ad",
+				"id": "11e635ff-9134-4bc2-b0b9-aa4246486474",
 				"method": "GET"
 			},
 			{
-				"id": "e6926ddc-5a71-401e-aa90-7cc6e8915fb1",
+				"id": "3ac1d37d-a86c-435f-9350-f8aa65233a2f",
 				"method": "PUT"
 			},
 			{
-				"id": "d23d2506-1f4c-4972-9c07-6465096e754f",
+				"id": "aacf583c-164f-4954-9d04-94be16f6911f",
 				"method": "PUT"
 			},
 			{
-				"id": "9e7ff3c4-327c-4ae2-a4e4-bbd2a774f9d6",
+				"id": "91853686-aa9a-4764-ad3c-128305449040",
 				"method": "DELETE"
 			},
 			{
-				"id": "54504820-b548-45f8-ac23-57ac5a4e295b",
+				"id": "0ecb79cf-31b5-4ed6-b17b-6a6e193d5db1",
 				"method": "DELETE"
 			},
 			{
-				"id": "7a10947a-af88-4198-bcf7-512c4cc05506",
+				"id": "3bd2723a-7f53-4a37-b92a-84037f3a6c35",
 				"method": "DELETE"
 			},
 			{
-				"id": "e95b9c4c-bcec-40c5-bf49-4554edf3013f",
+				"id": "08bce8c5-01bf-46d8-abee-4203d6446340",
+				"method": "GET"
+			},
+			{
+				"id": "07ca84e4-f555-4913-a620-781f7ae4c6f7",
+				"method": "GET"
+			},
+			{
+				"id": "22f622ca-1f39-41c1-a0b4-fabbef7ef5ff",
 				"method": "POST"
 			},
 			{
-				"id": "8b52dda4-029b-45a2-91b5-0d412945baa0",
+				"id": "6e778eb3-8b08-4046-88b6-807886e159c4",
 				"method": "POST"
 			},
 			{
-				"id": "02fe199a-801e-4e63-ab93-ab17192af462",
+				"id": "c16cc09f-20ef-49ca-9c9d-484368fb3d22",
 				"method": "POST"
 			},
 			{
-				"id": "204b06d7-0cf5-498d-949e-7d86d2480388",
+				"id": "c6511599-7c24-45e4-a67d-bbb727805fc5",
+				"method": "GET"
+			},
+			{
+				"id": "a8733d8c-efa0-438e-93b0-627b6d8cc697",
+				"method": "GET"
+			},
+			{
+				"id": "9b081c66-9416-4b5b-87aa-4a9682980c51",
+				"method": "GET"
+			},
+			{
+				"id": "81804544-4e99-404e-9bb9-b76c3300e638",
+				"method": "GET"
+			},
+			{
+				"id": "0d3880f4-1406-44d0-a4ad-f072517c77b3",
+				"method": "GET"
+			},
+			{
+				"id": "6eddb36a-0f0e-489d-8c87-85d9e74c23a1",
+				"method": "GET"
+			},
+			{
+				"id": "2d0e9fe4-9283-4db8-b751-184a14fce5a9",
 				"method": "POST"
 			},
 			{
-				"id": "947e2484-bff0-4567-9de6-989f953c26bb",
+				"id": "ae977bd1-13e6-4ff2-97ab-19e5e98c8186",
 				"method": "POST"
 			},
 			{
-				"id": "e6b7ac6e-06e4-451b-86ef-2e187f57d996",
+				"id": "af8b0464-9034-40a7-8fff-7265e10f91cc",
+				"method": "POST"
+			},
+			{
+				"id": "c11cf64b-8481-46b8-b41c-f945d3e622df",
+				"method": "POST"
+			},
+			{
+				"id": "094e40fb-4745-418c-9dbe-6e093b245127",
+				"method": "POST"
+			},
+			{
+				"id": "0a8031b2-ac59-4174-bf7a-b4bf120f833b",
 				"method": "GET"
 			},
 			{
-				"id": "05b27c62-aa8d-425b-ace2-89c617673caf",
+				"id": "082f254b-39f9-4903-899f-2ba40b8653f0",
 				"method": "GET"
 			},
 			{
-				"id": "5bc30c33-737f-431c-a7ad-e59f0ae85282",
+				"id": "373a11d5-8b7e-44ca-a67b-dd658d93f2c3",
 				"method": "GET"
 			},
 			{
-				"id": "7f339114-06b9-432d-b953-f296e8835140",
+				"id": "520e2411-5826-4996-8565-c25796449fb8",
 				"method": "GET"
 			},
 			{
-				"id": "2a25501c-3883-43ea-b768-27ffd68ff4e2",
+				"id": "ea05eb85-2369-4f2c-89a1-32c9757acca5",
 				"method": "GET"
 			},
 			{
-				"id": "64002967-e379-47f2-afa6-4abb7aa1b284",
+				"id": "b79c9fe9-0e4b-4620-842a-c359918516e9",
 				"method": "GET"
 			},
 			{
-				"id": "8c9ec13f-876c-427c-b339-1391fef767e8",
+				"id": "76aa06c0-6714-4e2c-8d38-dc43f5410ae4",
 				"method": "PUT"
 			},
 			{
-				"id": "b775c715-09a6-434b-bf5e-8c660f9130f2",
+				"id": "21fc0f98-2538-48ef-885b-f4a62201903d",
 				"method": "PUT"
 			},
 			{
-				"id": "2e4e0344-ad95-4c88-ad2b-c4c9c97c5ff9",
+				"id": "7d28cdf0-7f74-49d0-b0a4-a8e906029eec",
 				"method": "DELETE"
 			},
 			{
-				"id": "3476b55f-b743-4af1-869b-91d24fe8378f",
+				"id": "995e6eae-a6bc-4e69-8164-f0fc6fe118a9",
 				"method": "DELETE"
 			},
 			{
-				"id": "419341ca-7c52-472b-aa1e-61ea5acdf9dc",
+				"id": "879a5492-9068-4106-8693-a733d9f7ef1c",
 				"method": "DELETE"
 			},
 			{
-				"id": "04e78d12-d896-4722-9b7d-9e646f3e1a87",
+				"id": "3d24af05-c9af-4bd8-b55b-5ff88152a94e",
 				"method": "POST"
 			},
 			{
-				"id": "b9fd638e-96c3-479d-87f0-d3a80b838dc9",
+				"id": "4f3f24e5-1176-4fdc-a3b0-fe4608ec8cb2",
 				"method": "POST"
 			},
 			{
-				"id": "6398b9c2-06b1-4c1f-a2b8-e91d4f0e6143",
+				"id": "e6618b01-c782-4084-a5a8-736c7c3c1211",
 				"method": "POST"
 			},
 			{
-				"id": "fcfcf4ea-9fee-464c-9e66-9c67bc31c199",
-				"method": "GET"
-			},
-			{
-				"id": "757eb6bd-d4ed-40ea-94e2-9694e8471d5d",
-				"method": "GET"
-			},
-			{
-				"id": "98821eb7-f260-48ab-9e3d-605459af54ed",
-				"method": "GET"
-			},
-			{
-				"id": "8f6664f3-2f8c-4ebd-8cc3-691688beae64",
-				"method": "GET"
-			},
-			{
-				"id": "75a3ead0-2a14-47f9-acc2-faffa530c998",
-				"method": "GET"
-			},
-			{
-				"id": "1005b6b0-1a56-4335-8f74-ba6ec9cfbeec",
-				"method": "GET"
-			},
-			{
-				"id": "2a77db27-3bda-4ebe-9ae0-afa24d34d374",
+				"id": "a86347aa-cc24-41f2-8b5b-c1e642161e05",
 				"method": "POST"
 			},
 			{
-				"id": "ff487b47-3c1f-4f67-9d3c-622871306ec2",
+				"id": "42e35350-2c16-4b88-aaa7-b5469f423c8d",
 				"method": "POST"
 			},
 			{
-				"id": "174bb3c6-9ee0-408b-87ab-3e66bfb830dd",
-				"method": "POST"
-			},
-			{
-				"id": "a3678fb4-cdb0-4c9c-a534-018f29c33727",
+				"id": "2e6fbc79-417b-4952-bfe3-09dc08488b1b",
 				"method": "GET"
 			},
 			{
-				"id": "ca59bf10-79c8-4536-8eb2-f53822c986c1",
+				"id": "7c311a71-241a-4947-b7a7-5d51d04373b6",
 				"method": "GET"
 			},
 			{
-				"id": "bc54ac09-51d1-4321-9675-29d1848a4bcf",
+				"id": "228b7b6c-e711-474a-a4c8-c88f16c27e77",
 				"method": "GET"
 			},
 			{
-				"id": "10a7b8d2-d263-42d6-934c-d566756565a3",
+				"id": "124ebe09-4e36-4653-92d8-3f4d51373ab0",
 				"method": "GET"
 			},
 			{
-				"id": "d6d38c96-077d-4f00-bded-eb15d3324465",
+				"id": "c46e72f6-6322-45d1-8c81-d892e8728449",
 				"method": "GET"
 			},
 			{
-				"id": "ee20e597-5809-4b68-ab01-12f38bc5ab25",
+				"id": "c2b98921-ae5d-4221-a498-c2644191a468",
 				"method": "GET"
 			},
 			{
-				"id": "bcfd3fae-7d61-4c73-af9e-423972c97a3a",
+				"id": "2d3067b2-0071-47ec-85f9-04586ad3b81b",
 				"method": "PUT"
 			},
 			{
-				"id": "34eb4cc0-9e02-4cbb-8b20-976893037eab",
+				"id": "80bb92d9-dbe4-4303-9ba0-0a93c0f8a3c4",
 				"method": "PUT"
 			},
 			{
-				"id": "610cb628-6c07-4aa3-9903-0900ef930276",
+				"id": "5779680a-09c0-4a24-9ade-ecbda5559430",
 				"method": "DELETE"
 			},
 			{
-				"id": "c187dacd-d4cd-4016-911a-a8f6e3a822ea",
+				"id": "f0b88ad9-f639-4cb8-8c02-feb3c0df2d2a",
 				"method": "DELETE"
 			},
 			{
-				"id": "bac512ea-9beb-43a0-9476-3722b121cf73",
+				"id": "bd870883-b78b-43cb-be58-80448cf6d3e5",
 				"method": "DELETE"
-			},
-			{
-				"id": "ab658dc9-9b57-485d-af65-d0238cac53cc",
-				"method": "POST"
-			},
-			{
-				"id": "05f14b32-a9b2-46b2-9ebb-79685bf90c38",
-				"method": "GET"
-			},
-			{
-				"id": "6152fb36-9bd8-4390-8cd4-b96b577fdbaa",
-				"method": "GET"
 			}
 		]
 	}
