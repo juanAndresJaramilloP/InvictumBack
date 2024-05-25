@@ -60,19 +60,19 @@ export class ClienteReporteService {
         return await this.clienteRepository.save(cliente);
     }
 
-    async getReportesCliente(idCliente: string): Promise<ReporteEntity[]> {
-
+    async getReportesCliente(idCliente: string): Promise<{ id: string }[]> {
         if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(idCliente)) {
-            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form \'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF\'", BusinessError.BAD_REQUEST);
+            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'", BusinessError.BAD_REQUEST);
         }
-
+    
         const cliente: ClienteEntity = await this.clienteRepository.findOne({ where: { id: idCliente }, relations: ['reportes'] });
         if (!cliente) {
             throw new BusinessLogicException("The client with the given id was not found", BusinessError.NOT_FOUND);
         }
-
-        return cliente.reportes;
+    
+        return cliente.reportes.map(reporte => ({ id: reporte.id }));
     }
+    
 
     async getClienteReporte(idCliente: string, idReporte: string): Promise<ReporteEntity> {
 

@@ -4,12 +4,14 @@ import { GestorEntity } from '../../gestor/gestor.entity/gestor.entity';
 
 @Entity()
 export class ReporteEntity {
-
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column()
     archivo: string;
+
+    @Column()
+    titulo: string; 
 
     @ManyToOne(() => ClienteEntity, cliente => cliente.reportes)
     cliente: ClienteEntity;

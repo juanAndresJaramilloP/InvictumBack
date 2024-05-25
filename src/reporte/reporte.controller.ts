@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { ReporteDto } from './reporte.dto';
 import { ReporteEntity } from './reporte.entity/reporte.entity';
 import { ReporteService } from './reporte.service';
@@ -6,11 +6,16 @@ import { BusinessErrorsInterceptor } from '../shared/interceptors/business-error
 import { plainToInstance } from 'class-transformer';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { UseGuards } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
+import { join } from 'path';
+import { Response } from 'express';
+import * as multer from 'multer';
+import { Express } from 'express';
 
 @Controller('reportes')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class ReporteController {
-
     constructor(
         private readonly reporteService: ReporteService
     ){}
@@ -18,34 +23,56 @@ export class ReporteController {
     @UseGuards(JwtAuthGuard)
     @Get()
     async findAll() {
-      return await this.reporteService.findAll();
+        const reportes = await this.reporteService.findAll();
+        return reportes.map(reporte => ({ id: reporte.id, titulo: reporte.titulo }));
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get(':reporteId')
-    async findOne(@Param('reporteId') reporteId: string) {
-      return await this.reporteService.findOne(reporteId);
+    @Get('titulo/:reporteId')
+    async findTitle(@Param('reporteId') reporteId: string) {
+        const reporte = await this.reporteService.findOne(reporteId);
+        return { id: reporte.id, titulo: reporte.titulo };
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('pdf/:reporteId')
+    async findPDF(@Param('reporteId') reporteId: string, @Res() res: Response) {
+        const reporte = await this.reporteService.findOne(reporteId);
+        if (!reporte) {
+            res.status(404).json({ message: 'Reporte no encontrado' });
+            return;
+        }
+        res.sendFile(join(process.cwd(), reporte.archivo));
     }
 
     @UseGuards(JwtAuthGuard)
     @Post()
-    async create(@Body() reporteDto: ReporteDto) {
-      const reporte: ReporteEntity = plainToInstance(ReporteEntity, reporteDto);
-      return await this.reporteService.create(reporte);
+    @UseInterceptors(FileInterceptor('file', {
+        storage: diskStorage({
+            destination: './uploads',
+            filename: (req, file, cb) => {
+                const filename = `${Date.now()}-${file.originalname}`;
+                cb(null, filename);
+            }
+        })
+    }))
+    async create(@UploadedFile() file: Express.Multer.File, @Body() reporteDto: ReporteDto) {
+        const reporte = plainToInstance(ReporteEntity, reporteDto);
+        reporte.archivo = file.path;
+        return await this.reporteService.create(reporte);
     }
 
     @UseGuards(JwtAuthGuard)
     @Put(':reporteId')
     async update(@Param('reporteId') reporteId: string, @Body() reporteDto: ReporteDto) {
-      const reporte: ReporteEntity = plainToInstance(ReporteEntity, reporteDto);
-      return await this.reporteService.update(reporteId, reporte);
+        const reporte: ReporteEntity = plainToInstance(ReporteEntity, reporteDto);
+        return await this.reporteService.update(reporteId, reporte);
     }
 
     @UseGuards(JwtAuthGuard)
     @Delete(':reporteId')
     @HttpCode(204)
     async delete(@Param('reporteId') reporteId: string) {
-      return await this.reporteService.delete(reporteId);
+        return await this.reporteService.delete(reporteId);
     }
-
 }
