@@ -12,10 +12,17 @@ export class UserController {
     async login(@Req() req) {
         return this.authService.login(req);
     }
-
+    
     @UseGuards(JwtAuthGuard)
     @Get('validate')
     validateUser(@Req() req) {
-        return req.user;
+        return {
+            id: req.user.userId,
+            username: req.user.username, // Este es el email
+            name: req.user.name,
+            role: req.user.role
+        };
     }
+    
+
 }
