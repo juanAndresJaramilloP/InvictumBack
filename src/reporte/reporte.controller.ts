@@ -62,10 +62,4 @@ export class ReporteController {
         return await this.reporteService.create(reporte);
     }
 
-    @UseGuards(JwtAuthGuard)
-    @Put(':reporteId')
-    async update(@Param('reporteId') reporteId: string, @Body() reporteDto: ReporteDto) {
-        const reporte: ReporteEntity = plainToInstance(ReporteEntity, reporteDto);
-        return await this.reporteService.update(reporteId, reporte);
-    }
 }

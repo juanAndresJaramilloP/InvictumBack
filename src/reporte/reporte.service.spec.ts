@@ -73,24 +73,4 @@ describe('ReporteService', () => {
     expect(result.archivo).toEqual(reporte.archivo);
   });
 
-  it('Update should return the updated report', async () => {
-    const storedReport: ReporteEntity = reporteList[0];
-    const archivo = "../../uploads/1716772936823-Parcial2.pdf";
-    storedReport.archivo = archivo;
-    const result = await service.update(storedReport.id, storedReport);
-    expect(result).not.toBeNull();
-    expect(result.archivo).toEqual(archivo);
-  });
-
-  it('Update should throw an exception when the report does not exist', async () => {
-    const storedReporte: ReporteEntity = reporteList[0];
-    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'
-    storedReporte.id = id;
-    try {
-      await service.update(id, storedReporte);
-    } catch (error) {
-      expect(error.message).toEqual("The report with the given id was not found");
-    }
-  });
-
 });

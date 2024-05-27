@@ -1,16 +1,16 @@
 {
 	"info": {
-		"_postman_id": "008bdddd-488e-4bec-839e-edfce5d44f2a",
-		"name": "Invictum Copy",
+		"_postman_id": "355442e4-7061-475a-bb88-e3cb747594cb",
+		"name": "Invictum",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23415404"
+		"_exporter_id": "25530529"
 	},
 	"item": [
 		{
 			"name": "Login",
 			"item": [
 				{
-					"name": "Add a Manager Copy",
+					"name": "Add a Manager",
 					"event": [
 						{
 							"listen": "test",
@@ -120,11 +120,12 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"let response = pm.response.json();\r",
+									"var data = pm.response.json()\r",
+									"pm.collectionVariables.set(\"client_id\", data.id);\r",
 									"\r",
-									"\r",
-									"pm.environment.set(\"client_id\", response.id);\r",
-									""
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -2261,7 +2262,7 @@
 			"name": "Manager",
 			"item": [
 				{
-					"name": "Add a Manager",
+					"name": "Add a Manager Copy",
 					"event": [
 						{
 							"listen": "test",
@@ -2284,7 +2285,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nombre\": \"Carlos Sánchez\",\r\n  \"correo\": \"carlos.sanchez@example.com\",\r\n  \"contrasena\": \"contraseñaFuerte123\",\r\n  \"rol\": 2,\r\n  \"aba\": 303000\r\n}\r\n",
+							"raw": "{\r\n  \"nombre\": \"Carlos Sánchez\",\r\n  \"correo\": \"gestor@invictum.com\",\r\n  \"contrasena\": \"Invictum2024\",\r\n  \"rol\": 2,\r\n  \"aba\": 303000\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3031,7 +3032,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "postman-cloud:///1ef1ad54-f26b-4df0-b876-e78bfb789707"
+									"src": "postman-cloud:///1ef1bd0b-7e35-4050-b9cf-aff633517462"
 								},
 								{
 									"key": "archivo",
@@ -3206,6 +3207,102 @@
 					]
 				},
 				{
+					"name": "Get a ReportTitle bad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"   pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get expected error message\", function () {\r",
+									"   var data = pm.response.json();\r",
+									"   pm.expect(data.message).to.eql(\"The report with the given id was not found\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reportes/titulo/{{bad_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reportes",
+								"titulo",
+								"{{bad_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a ReportTitle bad",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reportes/titulo/{{bad_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reportes",
+										"titulo",
+										"{{bad_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-WICdKzUw9vYNSuD3+3PW31D3abU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 May 2024 02:46:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The report with the given id was not found\"\n}"
+						}
+					]
+				},
+				{
 					"name": "Get a Reportpdf",
 					"event": [
 						{
@@ -3293,19 +3390,19 @@
 					]
 				},
 				{
-					"name": "Get nonexistent Report",
+					"name": "Get a Reportpdf bad",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 404\", function () {",
-									"   pm.response.to.have.status(404);",
-									"});",
-									"",
-									"pm.test(\"Get expected error message\", function () {",
-									"   var data = pm.response.json();",
-									"   pm.expect(data.message).to.eql(\"The report with the given id was not found\");",
+									"pm.test(\"Status code is 404\", function () {\r",
+									"   pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get expected error message\", function () {\r",
+									"   var data = pm.response.json();\r",
+									"   pm.expect(data.message).to.eql(\"The report with the given id was not found\");\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -3317,39 +3414,74 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/reportes/{{bad_id}}",
+							"raw": "{{base_url}}/reportes/pdf/{{bad_id}}",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"reportes",
+								"pdf",
 								"{{bad_id}}"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Get nonexistent Transfer",
+							"name": "Get a Reportpdf bad",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/reportes/0000000000",
+									"raw": "{{base_url}}/reportes/pdf/{{bad_id}}",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
 										"reportes",
-										"0000000000"
+										"pdf",
+										"{{bad_id}}"
 									]
 								}
 							},
 							"status": "Not Found",
 							"code": 404,
-							"_postman_previewlanguage": "Text",
-							"header": [],
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-WICdKzUw9vYNSuD3+3PW31D3abU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 May 2024 02:46:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
 							"cookie": [],
-							"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"The report with the given id was not found\"\r\n}"
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The report with the given id was not found\"\n}"
 						}
 					]
 				},
@@ -3440,322 +3572,6 @@
 							"body": "[\n    {\n        \"id\": \"964a3ffb-129f-46cc-be5a-65b700e0ba00\",\n        \"archivo\": \"reporte_finanzas_q1_revisado.pdf\"\n    }\n]"
 						}
 					]
-				},
-				{
-					"name": "Update a Report",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"   pm.response.to.have.status(200);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"archivo\": \"reporte_finanzas_q1_revisado1.pdf\"\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/reportes/{{report_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"reportes",
-								"{{report_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Update a Report",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"archivo\": \"reporte_finanzas_q1_revisado1.pdf\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/reportes/{{report_id}}",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"reportes",
-										"{{report_id}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "91"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"5b-7SuxooPU58tfyfRWKR59ozB9/xo\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 17 May 2024 14:46:09 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": \"964a3ffb-129f-46cc-be5a-65b700e0ba00\",\n    \"archivo\": \"reporte_finanzas_q1_revisado1.pdf\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Update a nonexistent report",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 404\", function () {",
-									"   pm.response.to.have.status(404);",
-									"});",
-									"",
-									"pm.test(\"Get expected error message\", function () {",
-									"   var data = pm.response.json();",
-									"   pm.expect(data.message).to.eql(\"The report with the given id was not found\");",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"archivo\": \"reporte_finanzas_q1_revisado.pdf\"\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/reportes/{{bad_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"reportes",
-								"{{bad_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Update nonexistent report",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"archivo\": \"reporte_finanzas_q1_revisado.pdf\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/reportes/000000000000000",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"reportes",
-										"000000000000000"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "Text",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"The report with the given id was not found\"\r\n}"
-						}
-					]
-				},
-				{
-					"name": "Delete a report",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 204\", function () {\r",
-									"   pm.response.to.have.status(204);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/reportes/{{report_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"reportes",
-								"{{report_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Delete a report",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/reportes/{{report_id}}",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"reportes",
-										"{{report_id}}"
-									]
-								}
-							},
-							"status": "No Content",
-							"code": 204,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 17 May 2024 14:47:33 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						}
-					]
-				},
-				{
-					"name": "Delete nonexistent report",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 404\", function () {",
-									"   pm.response.to.have.status(404);",
-									"});",
-									"",
-									"pm.test(\"Get expected error message\", function () {",
-									"   var data = pm.response.json();",
-									"   pm.expect(data.message).to.eql(\"The report with the given id was not found\");",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/reportes/{{bad_id}}",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"reportes",
-								"{{bad_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Delete nonexistent report",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/reportes/0000000000000000",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"reportes",
-										"0000000000000000"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "Text",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"The report with the given id was not found\"\r\n}"
-						}
-					]
 				}
 			],
 			"auth": {
@@ -3803,7 +3619,7 @@
 			"name": "Client",
 			"item": [
 				{
-					"name": "Add a Client",
+					"name": "Add a Client Copy",
 					"event": [
 						{
 							"listen": "test",
@@ -3822,11 +3638,14 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Juan Pérez\",\r\n    \"correo\": \"juan.perez@example.com\",\r\n    \"contrasena\": \"contraseñaSegura123\",\r\n    \"rol\": 1,\r\n    \"balance\": 10000\r\n}",
+							"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"Invictum\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3844,45 +3663,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Add a Client",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"contraseñaSegura123\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/clientes",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"clientes"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"body": "{\r\n  \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"contraseñaSegura123\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n"
-						},
 						{
 							"name": "Add a Client",
 							"originalRequest": {
@@ -4149,6 +3929,194 @@
 							"header": [],
 							"cookie": [],
 							"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"The client with the given id was not found\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a client by email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clientes/email/{{client_email}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clientes",
+								"email",
+								"{{client_email}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a client by email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/clientes/email/{{client_email}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clientes",
+										"email",
+										"{{client_email}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c4-t2A4inw19K5nzX1kCfa/EbD8taQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 May 2024 02:03:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"05d1b4cc-4b58-4874-93ba-25153da34a3c\",\n    \"nombre\": \"Juan Pérez\",\n    \"correo\": \"juan.perez@example.com\",\n    \"contrasena\": \"contraseñaSegura123\",\n    \"rol\": 1,\n    \"balance\": 10000,\n    \"transferencias\": [],\n    \"reportes\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Get client bad email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"   pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get expected error message\", function () {\r",
+									"   var data = pm.response.json();\r",
+									"   pm.expect(data.message).to.eql(\"The client with the given email was not found\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clientes/email/{{bad_client_email}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clientes",
+								"email",
+								"{{bad_client_email}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get client bad email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/clientes/email/{{bad_client_email}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clientes",
+										"email",
+										"{{bad_client_email}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-68b7Wj9uDi4h1hW3ZwLeu9aOGBg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 May 2024 02:05:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The client with the given email was not found\"\n}"
 						}
 					]
 				},
@@ -4457,7 +4425,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "{{manager_token}}",
+						"value": "{{client_token}}",
 						"type": "string"
 					}
 				]
@@ -6118,7 +6086,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -6537,11 +6505,14 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Juan Pérez\",\r\n    \"correo\": \"juan.perez@example.com\",\r\n    \"contrasena\": \"contraseñaSegura123\",\r\n    \"rol\": 1,\r\n    \"balance\": 10000\r\n}",
+							"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"Invictum\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6559,45 +6530,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Add a Client",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"contraseñaSegura123\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/clientes",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"clientes"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"body": "{\r\n  \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"contraseñaSegura123\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n"
-						},
 						{
 							"name": "Add a Client",
 							"originalRequest": {
@@ -7473,111 +7405,7 @@
 			"name": "ReporteCliente",
 			"item": [
 				{
-					"name": "Add a Report Copy 2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var data = pm.response.json()\r",
-									"pm.collectionVariables.set(\"report_id\", data.id);\r",
-									"\r",
-									"pm.test(\"Status code is 201\", function () {\r",
-									"   pm.response.to.have.status(201);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"archivo\": \"reporte_finanzas_q1_revisado.pdf\"\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/reportes",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"reportes"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Add a Report",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"archivo\": \"reporte_finanzas_q1_revisado.pdf\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/reportes",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"reportes"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "90"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"5a-MUmVtxJBvZFmp5W+fqQihftiLAQ\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 17 May 2024 14:38:06 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"archivo\": \"reporte_finanzas_q1_revisado.pdf\",\n    \"id\": \"964a3ffb-129f-46cc-be5a-65b700e0ba00\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Add a Client Copy 2",
+					"name": "Add a Client Copy",
 					"event": [
 						{
 							"listen": "test",
@@ -7596,11 +7424,14 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Juan Pérez\",\r\n    \"correo\": \"juan.perez@example.com\",\r\n    \"contrasena\": \"contraseñaSegura123\",\r\n    \"rol\": 1,\r\n    \"balance\": 10000\r\n}",
+							"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"Invictum\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7618,45 +7449,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Add a Client",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"contraseñaSegura123\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/clientes",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"clientes"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"body": "{\r\n  \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"correo\": \"juan.perez@example.com\",\r\n  \"contrasena\": \"contraseñaSegura123\",\r\n  \"rol\": 1,\r\n  \"balance\": 10000\r\n}\r\n"
-						},
 						{
 							"name": "Add a Client",
 							"originalRequest": {
@@ -8625,20 +8417,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "165"
+									"value": "301"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"a5-0j2LnzXffdrOaDrqwYBfLbJ0NEs\""
+									"value": "W/\"12d-0hS7oM24uf1wf8oqs0c9gjqhwcg\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 21 May 2024 00:02:56 GMT"
+									"value": "Mon, 27 May 2024 02:56:55 GMT"
 								},
 								{
 									"key": "Connection",
@@ -8650,7 +8446,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": \"a3cc4ac1-c96b-4386-80c5-dcc9aa8f0269\",\n    \"nombre\": \"Juan Pérez\",\n    \"correo\": \"juanandres@invictum.com\",\n    \"contrasena\": \"Invictum\",\n    \"rol\": 1,\n    \"balance\": 10000,\n    \"reportes\": []\n}"
+							"body": "{\n    \"id\": \"4e3eeeb8-65e9-43be-a863-cfb9ca177b61\",\n    \"nombre\": \"Juan Pérez\",\n    \"correo\": \"juan.perez@example.com\",\n    \"contrasena\": \"contraseñaSegura123\",\n    \"rol\": 1,\n    \"balance\": 10000,\n    \"reportes\": [\n        {\n            \"id\": \"12d11d63-9e5e-40b0-944c-b1da2add6485\",\n            \"archivo\": \"uploads/1716778573109-1716772936823-Parcial2.pdf\",\n            \"titulo\": \"01-2024\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -8841,7 +8637,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -9087,7 +8883,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nombre\": \"Carlos Sánchez\",\r\n  \"correo\": \"carlos.sanchez@example.com\",\r\n  \"contrasena\": \"contraseñaFuerte123\",\r\n  \"rol\": 2,\r\n  \"aba\": 303000\r\n}\r\n",
+							"raw": "{\r\n  \"nombre\": \"Carlos Sánchez\",\r\n  \"correo\": \"gestor@invictum.com\",\r\n  \"contrasena\": \"Invictum2024\",\r\n  \"rol\": 2,\r\n  \"aba\": 303000\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -9164,110 +8960,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"nombre\": \"Carlos Sánchez\",\n    \"correo\": \"carlos.sanchez@example.com\",\n    \"contrasena\": \"contraseñaFuerte123\",\n    \"rol\": 2,\n    \"aba\": 303000,\n    \"id\": \"6dac0a20-0e56-49a5-831c-a53c1481d3e0\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Add a Report Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var data = pm.response.json()\r",
-									"pm.collectionVariables.set(\"report_id\", data.id);\r",
-									"\r",
-									"pm.test(\"Status code is 201\", function () {\r",
-									"   pm.response.to.have.status(201);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"archivo\": \"reporte_finanzas_q1_revisado.pdf\"\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/reportes",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"reportes"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Add a Report",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"archivo\": \"reporte_finanzas_q1_revisado.pdf\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/reportes",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"reportes"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "90"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"5a-MUmVtxJBvZFmp5W+fqQihftiLAQ\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 17 May 2024 14:38:06 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"archivo\": \"reporte_finanzas_q1_revisado.pdf\",\n    \"id\": \"964a3ffb-129f-46cc-be5a-65b700e0ba00\"\n}"
 						}
 					]
 				},
@@ -10177,20 +9869,24 @@
 									"value": "Express"
 								},
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "271"
+									"value": "306"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"10f-wYELXCEf60qP2jGD6JbTDDfNOc8\""
+									"value": "W/\"132-SXr2dS2p7wKqfjij2lbtezk5K2s\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 20 May 2024 23:05:54 GMT"
+									"value": "Mon, 27 May 2024 03:00:31 GMT"
 								},
 								{
 									"key": "Connection",
@@ -10202,12 +9898,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": \"f2df10d8-5470-4224-852d-4f46f16958e8\",\n    \"nombre\": \"Carlos Sánchez\",\n    \"correo\": \"carlos.sanchez@example.com\",\n    \"contrasena\": \"contraseñaFuerte123\",\n    \"rol\": 2,\n    \"aba\": 303000,\n    \"reportes\": [\n        {\n            \"id\": \"7a032697-f22a-49f9-8b44-f1a8adc386d7\",\n            \"archivo\": \"reporte_finanzas_q1_revisado.pdf\"\n        }\n    ]\n}"
+							"body": "{\n    \"id\": \"4d0dd56d-391e-48eb-979b-c97efd6a7671\",\n    \"nombre\": \"Carlos Sánchez\",\n    \"correo\": \"carlos.sanchez@example.com\",\n    \"contrasena\": \"contraseñaFuerte123\",\n    \"rol\": 2,\n    \"aba\": 303000,\n    \"reportes\": [\n        {\n            \"id\": \"22df6dbc-ae74-46e2-b914-81bec1092401\",\n            \"archivo\": \"uploads/1716778772028-1716772936823-Parcial2.pdf\",\n            \"titulo\": \"01-2024\"\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
-					"name": "AsociarReportesUnexistentGestor Copy",
+					"name": "AsociarReportesUnexistentGestor",
 					"event": [
 						{
 							"listen": "test",
@@ -10393,7 +10089,7 @@
 								}
 							],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -10702,6 +10398,16 @@
 		{
 			"key": "recursos_id_2",
 			"value": ""
+		},
+		{
+			"key": "client_email",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "bad_client_email",
+			"value": "badclientemail@bademail.com",
+			"type": "string"
 		}
 	]
 }

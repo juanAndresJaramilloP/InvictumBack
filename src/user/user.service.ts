@@ -18,7 +18,6 @@ export class UserService {
     ) { }
 
     async findOne(username: string): Promise<ClienteEntity | GestorEntity | undefined> {
-        
         const gestor: GestorEntity = await this.gestorRepository.findOne({ where:{correo : username} });
         if (gestor) {
             return gestor;

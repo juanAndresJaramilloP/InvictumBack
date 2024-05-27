@@ -31,16 +31,4 @@ export class ReporteService {
     async create(reporte: ReporteEntity): Promise<ReporteEntity> {
         return await this.reporteRepository.save(reporte);
     }
-
-    async update(id: string, reporte: ReporteEntity): Promise<ReporteEntity> {
-        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(id)) {
-            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'", BusinessError.BAD_REQUEST);
-        }
-
-        const persistedReporte: ReporteEntity = await this.reporteRepository.findOne({where:{id}});
-        if(!persistedReporte) {
-            throw new BusinessLogicException("The report with the given id was not found", BusinessError.NOT_FOUND);
-        }
-        return await this.reporteRepository.save({...persistedReporte, ...reporte});
-    }
 }
