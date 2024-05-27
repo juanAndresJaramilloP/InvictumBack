@@ -27,7 +27,8 @@ describe('ReporteService', () => {
     reporteList = [];
     for(let i = 0; i < 5; i++){
       const reporte: ReporteEntity = await repository.save({
-        archivo: faker.internet.url(),
+        archivo: "../../uploads/1716772936823-Parcial2.pdf",
+        titulo: faker.lorem.word(),
       });
       reporteList.push(reporte);
     }
@@ -62,7 +63,8 @@ describe('ReporteService', () => {
   it('Create should return the created report', async () => {
     const reporte: ReporteEntity = {
       id: "",
-      archivo: faker.internet.url(),
+      archivo: "../../uploads/1716772936823-Parcial2.pdf",
+      titulo: faker.lorem.word(),
       cliente: null,
       gestor: null,
     };
@@ -73,7 +75,7 @@ describe('ReporteService', () => {
 
   it('Update should return the updated report', async () => {
     const storedReport: ReporteEntity = reporteList[0];
-    const archivo = faker.internet.url();
+    const archivo = "../../uploads/1716772936823-Parcial2.pdf";
     storedReport.archivo = archivo;
     const result = await service.update(storedReport.id, storedReport);
     expect(result).not.toBeNull();
@@ -86,22 +88,6 @@ describe('ReporteService', () => {
     storedReporte.id = id;
     try {
       await service.update(id, storedReporte);
-    } catch (error) {
-      expect(error.message).toEqual("The report with the given id was not found");
-    }
-  });
-
-  it('Delete should remove the report', async () => {
-    const storedReport: ReporteEntity = reporteList[0];
-    await service.delete(storedReport.id);
-    const result = await repository.findOne({where:{id: storedReport.id}});
-    expect(result).toBeNull();
-  });
-
-  it("Delete should throw an exception when the report does not exist", async () => {
-    const id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
-    try {
-      await service.delete(id);
     } catch (error) {
       expect(error.message).toEqual("The report with the given id was not found");
     }

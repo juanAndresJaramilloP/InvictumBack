@@ -68,6 +68,26 @@ describe('ClienteService', () => {
     }
   });
 
+  it('findOneByEmail should return a client by its email', async () => {
+    const storedClient: ClienteEntity = clienteList[0];
+    const result = await service.findOneByEmail(storedClient.correo);
+    expect(result).not.toBeNull();
+    expect(result.nombre).toEqual(storedClient.nombre);
+    expect(result.correo).toEqual(storedClient.correo);
+    expect(result.contrasena).toEqual(storedClient.contrasena);
+    expect(result.rol).toEqual(storedClient.rol);
+    expect(result.balance).toEqual(storedClient.balance);
+  });
+
+  it('findOneByEmail should throw an error if the client with the email does not exist', async () => {
+    const clientEmail = 'incorrectemail@notvalid.com';
+    try {
+      await service.findOneByEmail(clientEmail);
+    } catch (error) {
+      expect(error.message).toBe('The client with the given email was not found');
+    }
+  });
+
   it('Create should create a new client', async () => {
     const newClient: ClienteEntity = {
       id: "",

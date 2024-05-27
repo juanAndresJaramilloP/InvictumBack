@@ -163,31 +163,35 @@ describe('TemaeducativoRecursoeducativoService', () => {
 
   it('associateRecursosTema should associate resources to the given educational theme', async () => {
     const newrecursoList: RecursoEducativoEntity[] = [];
+    const newRecursosIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const recurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
           url: faker.internet.url(),
           name: faker.string.alpha(),
         })
         newrecursoList.push(recurso);
+        newRecursosIds.push(recurso.id);
     }
 
-    const result: TemaEducativoEntity = await service.associateRecursosTema(tema.id, newrecursoList);
+    const result: TemaEducativoEntity = await service.associateRecursosTema(tema.id, newRecursosIds);
     expect(result.recursos.length).toBe(3);
   });
 
   it('associateRecursosTema should return an error if the educational theme does not exist', async () => {
     const newrecursoList: RecursoEducativoEntity[] = [];
+    const newRecursosIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const recurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
           url: faker.internet.url(),
           name: faker.string.alpha(),
         })
         newrecursoList.push(recurso);
+        newRecursosIds.push(recurso.id);
     }
 
     const temaId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
-      await service.associateRecursosTema(temaId, newrecursoList);
+      await service.associateRecursosTema(temaId, newRecursosIds);
     } catch (error) {
       expect(error.message).toBe('The educational theme with the given id was not found');
     }
@@ -195,17 +199,19 @@ describe('TemaeducativoRecursoeducativoService', () => {
 
   it('associateRecursosTema should return an error if any of the resources given does not exist', async () => {
     const newrecursoList: RecursoEducativoEntity[] = [];
+    const newRecursosIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const recurso: RecursoEducativoEntity = await recursoEducativoRepository.save({
           url: faker.internet.url(),
           name: faker.string.alpha(),
         })
         newrecursoList.push(recurso);
+        newRecursosIds.push(recurso.id);
     }
 
     newrecursoList[0].id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
-      await service.associateRecursosTema(tema.id, newrecursoList);
+      await service.associateRecursosTema(tema.id, newRecursosIds);
     } catch (error) {
       expect(error.message).toBe('The educational resource with the given id was not found');
     }

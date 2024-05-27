@@ -34,7 +34,8 @@ describe('GestorReporteService', () => {
     reporteList = [];
     for(let i = 0; i < 5; i++){
         const reporte: ReporteEntity = await reporteRepository.save({
-          archivo: faker.internet.url(),
+          archivo: "../../uploads/1716772936823-Parcial2.pdf",
+          titulo: faker.lorem.word(),
         })
         reporteList.push(reporte);
     }
@@ -55,7 +56,8 @@ describe('GestorReporteService', () => {
 
   it('addReporteGestor should add a report to a manager', async () => {
     const newReporte: ReporteEntity = await reporteRepository.save({
-      archivo: faker.internet.url(),
+      archivo: "../../uploads/1716772936823-Parcial2.pdf",
+      titulo: faker.lorem.word(),
     });
 
     const newGestor: GestorEntity = await gestorRepository.save({
@@ -75,7 +77,8 @@ describe('GestorReporteService', () => {
 
   it('addReporteGestor should throw an error if the manager does not exist', async () => {
     const newReporte: ReporteEntity = await reporteRepository.save({
-      archivo: faker.internet.url(),
+      archivo: "../../uploads/1716772936823-Parcial2.pdf",
+      titulo: faker.lorem.word(),
     });
 
     const managerId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
@@ -104,7 +107,7 @@ describe('GestorReporteService', () => {
   });
 
   it('getReportesGestor should return all reports from a manager', async () => {
-    const result: ReporteEntity[] = await service.getReportesGestor(gestor.id);
+    const result: {id: string}[] = await service.getReportesGestor(gestor.id);
     expect(result).not.toBeNull();
     expect(result).toHaveLength(reporteList.length);
   });
@@ -176,29 +179,35 @@ describe('GestorReporteService', () => {
 
   it('associateReportesGestor should associate reports to a manager', async () => {
     const newReporteList: ReporteEntity[] = [];
+    const newReportesIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const reporte: ReporteEntity = await reporteRepository.save({
-          archivo: faker.internet.url(),
+          archivo: "../../uploads/1716772936823-Parcial2.pdf",
+          titulo: faker.lorem.word(),
         })
         newReporteList.push(reporte);
+        newReportesIds.push(reporte.id);
     }
 
-    const result: GestorEntity = await service.associateReportesGestor(gestor.id, newReporteList);
+    const result: GestorEntity = await service.associateReportesGestor(gestor.id, newReportesIds);
     expect(result.reportes.length).toBe(3);
   });
 
   it('associateReportesGestor should throw an error if the manager does not exist', async () => {
     const newReporteList: ReporteEntity[] = [];
+    const newReportesIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const reporte: ReporteEntity = await reporteRepository.save({
-          archivo: faker.internet.url(),
+          archivo: "../../uploads/1716772936823-Parcial2.pdf",
+          titulo: faker.lorem.word(),
         })
         newReporteList.push(reporte);
+        newReportesIds.push(reporte.id);
     }
 
     const managerId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
-      await service.associateReportesGestor(managerId, newReporteList);
+      await service.associateReportesGestor(managerId, newReportesIds);
     } catch (error) {
       expect(error.message).toBe('The manager with the given id was not found');
     }
@@ -206,16 +215,19 @@ describe('GestorReporteService', () => {
 
   it('associateReportesGestor should throw an error if the report does not exist', async () => {
     const newReporteList: ReporteEntity[] = [];
+    const newReportesIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const reporte: ReporteEntity = await reporteRepository.save({
-          archivo: faker.internet.url(),
+          archivo: "../../uploads/1716772936823-Parcial2.pdf",
+          titulo: faker.lorem.word(),
         })
         newReporteList.push(reporte);
+        newReportesIds.push(reporte.id);
     }
 
-    newReporteList[0].id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
+    newReportesIds[0] = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
-      await service.associateReportesGestor(gestor.id, newReporteList);
+      await service.associateReportesGestor(gestor.id, newReportesIds);
     } catch (error) {
       expect(error.message).toBe('The report with the given id was not found');
     }

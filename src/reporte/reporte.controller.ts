@@ -68,11 +68,4 @@ export class ReporteController {
         const reporte: ReporteEntity = plainToInstance(ReporteEntity, reporteDto);
         return await this.reporteService.update(reporteId, reporte);
     }
-
-    @UseGuards(JwtAuthGuard)
-    @Delete(':reporteId')
-    @HttpCode(204)
-    async delete(@Param('reporteId') reporteId: string) {
-        return await this.reporteService.delete(reporteId);
-    }
 }

@@ -35,7 +35,8 @@ describe('ClienteReporteService', () => {
     reporteList = [];
     for(let i = 0; i < 5; i++){
         const reporte: ReporteEntity = await reporteRepository.save({
-          archivo: faker.internet.url(),
+          archivo: "../../uploads/1716772936823-Parcial2.pdf",
+          titulo: faker.lorem.word(),
         })
         reporteList.push(reporte);
     }
@@ -56,7 +57,8 @@ describe('ClienteReporteService', () => {
 
   it('addReporteCliente should add a report to a client', async () => {
     const newReporte: ReporteEntity = await reporteRepository.save({
-      archivo: faker.internet.url(),
+      archivo: "../../uploads/1716772936823-Parcial2.pdf",
+      titulo: faker.lorem.word(),
     });
 
     const newClient: ClienteEntity = await clienteRepository.save({
@@ -76,7 +78,8 @@ describe('ClienteReporteService', () => {
 
   it('addReporteCliente should throw an error if the client does not exist', async () => {
     const newReporte: ReporteEntity = await reporteRepository.save({
-      archivo: faker.internet.url(),
+      archivo: "../../uploads/1716772936823-Parcial2.pdf",
+      titulo: faker.lorem.word(),
     });
 
     const clientId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
@@ -105,7 +108,7 @@ describe('ClienteReporteService', () => {
   });
 
   it('getReportesCliente should return all reports from a client', async () => {
-    const result: ReporteEntity[] = await service.getReportesCliente(cliente.id);
+    const result: { id: string }[] = await service.getReportesCliente(cliente.id);
     expect(result).not.toBeNull();
     expect(result).toHaveLength(reporteList.length);
   });
@@ -177,29 +180,35 @@ describe('ClienteReporteService', () => {
 
   it('associateReportesCliente should associate reports to a client', async () => {
     const newReporteList: ReporteEntity[] = [];
+    const newReporteIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const reporte: ReporteEntity = await reporteRepository.save({
-          archivo: faker.internet.url(),
+          archivo: "../../uploads/1716772936823-Parcial2.pdf",
+          titulo: faker.lorem.word(),
         })
         newReporteList.push(reporte);
+        newReporteIds.push(reporte.id);
     }
 
-    const result: ClienteEntity = await service.associateReportesCliente(cliente.id, newReporteList);
+    const result: ClienteEntity = await service.associateReportesCliente(cliente.id, newReporteIds);
     expect(result.reportes.length).toBe(3);
   });
 
   it('associateReportesCliente should throw an error if the client does not exist', async () => {
     const newReporteList: ReporteEntity[] = [];
+    const newReporteIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const reporte: ReporteEntity = await reporteRepository.save({
-          archivo: faker.internet.url(),
+          archivo: "../../uploads/1716772936823-Parcial2.pdf",
+          titulo: faker.lorem.word(),
         })
         newReporteList.push(reporte);
+        newReporteIds.push(reporte.id);
     }
 
     const clientId = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
-      await service.associateReportesCliente(clientId, newReporteList);
+      await service.associateReportesCliente(clientId, newReporteIds);
     } catch (error) {
       expect(error.message).toBe('The client with the given id was not found');
     }
@@ -207,16 +216,19 @@ describe('ClienteReporteService', () => {
 
   it('associateReportesCliente should throw an error if the report does not exist', async () => {
     const newReporteList: ReporteEntity[] = [];
+    const newReporteIds: string[] = [];
     for(let i = 0; i < 3; i++){
         const reporte: ReporteEntity = await reporteRepository.save({
-          archivo: faker.internet.url(),
+          archivo: "../../uploads/1716772936823-Parcial2.pdf",
+          titulo: faker.lorem.word(),
         })
         newReporteList.push(reporte);
+        newReporteIds.push(reporte.id);
     }
 
-    newReporteList[0].id = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
+    newReporteIds[0] = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
     try {
-      await service.associateReportesCliente(cliente.id, newReporteList);
+      await service.associateReportesCliente(cliente.id, newReporteIds);
     } catch (error) {
       expect(error.message).toBe('The report with the given id was not found');
     }
