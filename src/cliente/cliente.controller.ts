@@ -27,6 +27,12 @@ export class ClienteController {
     async findOne(@Param('clientId') clientId: string) {
       return await this.clienteService.findOne(clientId);
     }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('email/:clientEmail')
+    async findOneByEmail(@Param('clientEmail') clientEmail: string) {
+      return await this.clienteService.findOneByEmail(clientEmail);
+    }
   
     @Post()
     async create(@Body() clienteDto: ClienteDto) {

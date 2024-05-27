@@ -43,17 +43,4 @@ export class ReporteService {
         }
         return await this.reporteRepository.save({...persistedReporte, ...reporte});
     }
-
-    async delete(id: string): Promise<void> {
-        if (!/^[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}$/.test(id)) {
-            throw new BusinessLogicException("Invalid id format. HINT: Valid UUID values are of the form 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'", BusinessError.BAD_REQUEST);
-        }
-        
-        const persistedReporte: ReporteEntity = await this.reporteRepository.findOne({where:{id}});
-        if(!persistedReporte) {
-            throw new BusinessLogicException("The report with the given id was not found", BusinessError.NOT_FOUND);
-        }
-        await unlink(persistedReporte.archivo); // Eliminar el archivo del sistema de archivos
-        await this.reporteRepository.remove(persistedReporte);
-    }
 }

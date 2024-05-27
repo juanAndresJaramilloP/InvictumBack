@@ -30,6 +30,16 @@ export class ClienteService {
         return cliente;
     }
 
+    async findOneByEmail(email: string): Promise<ClienteEntity> {
+
+        const cliente: ClienteEntity = await this.clienteRepository.findOne({where:{correo: email}, relations: ['transferencias','reportes']});
+        if (!cliente) {
+            throw new BusinessLogicException("The client with the given email was not found", BusinessError.NOT_FOUND);
+        }
+
+        return cliente;
+    }
+
     async create(cliente: ClienteEntity): Promise<ClienteEntity> {
         return await this.clienteRepository.save(cliente);
     }
